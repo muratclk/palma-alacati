@@ -48,33 +48,32 @@ export default function About() {
               <span className="text-stone italic"> Yasatin</span>
             </h2>
             <p className="mt-6 text-warm-gray leading-relaxed text-base md:text-lg">
-              Palma Alacati, tarihi Alacati sokaklarinda, geleneksel tas mimari ile
-              modern konforu bulusturan ozel bir butik oteldir. Zeytin agaclari ve
-              begonvillerle cevrili bahcemizde, Ege&apos;nin essiz atmosferini
-              soluyacaksiniz.
+              Palma Alacati, Hacimemis Mahallesi&apos;nde 5 ozel tasarimli
+              dairesi ile butik apart otel deneyimi sunar. Her daire kendine
+              ozgu ic tasarimi, ozel mutfagi ve bahce manzarasi ile
+              Ege&apos;nin huzurunu yasatir.
             </p>
             <p className="mt-4 text-warm-gray leading-relaxed">
-              Her detayinda Alacati&apos;nin sicakligini ve zarafetini yansitan
-              otelimizde, ozenle hazirlanmis odalarimiz, organik malzemelerle
-              zenginlestirilmis kahvalti soframiz ve kisisellestirilmis hizmet
-              anlayisimizla unutulmaz bir konaklama deneyimi sunuyoruz.
+              Koyicine ve Alacati&apos;nin en hareketli sokaklarina yurume
+              mesafesinde bir vaha. Mevsimlik acik havuz, yesilliklere cevrili
+              bahce ve ucretsiz WiFi ile konforlu bir konaklama sizi bekliyor.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-8">
               <div>
-                <span className="font-heading text-4xl text-sage">6</span>
-                <span className="block text-sm text-warm-gray mt-1">Ozel Oda</span>
+                <span className="font-heading text-4xl text-sage">5</span>
+                <span className="block text-sm text-warm-gray mt-1">Ozel Daire</span>
               </div>
               <div>
                 <span className="font-heading text-4xl text-sage">4.9</span>
                 <span className="block text-sm text-warm-gray mt-1">
-                  Misafir Puani
+                  Google Puani
                 </span>
               </div>
               <div>
-                <span className="font-heading text-4xl text-sage">2000+</span>
+                <span className="font-heading text-4xl text-sage">3</span>
                 <span className="block text-sm text-warm-gray mt-1">
-                  Mutlu Misafir
+                  Dil Destegi
                 </span>
               </div>
             </div>

@@ -6,18 +6,17 @@ import { hotelInfo } from "@/lib/data";
 
 const footerLinks = {
   kesfet: [
-    { href: "/odalar", label: "Odalar & Suitler" },
-    { href: "/restoran", label: "Restoran" },
+    { href: "/odalar", label: "Daireler & Suitler" },
     { href: "/galeri", label: "Galeri" },
     { href: "/hakkimizda", label: "Hakkimizda" },
     { href: "/iletisim", label: "Iletisim" },
   ],
   hizmetler: [
     { href: "/odalar", label: "Konaklama" },
-    { href: "/restoran", label: "Ege Mutfagi" },
-    { href: "/#amenities", label: "SPA & Wellness" },
-    { href: "/#amenities", label: "Havuz" },
-    { href: "/#amenities", label: "Transfer" },
+    { href: "/#amenities", label: "Ozel Mutfak" },
+    { href: "/#amenities", label: "Mevsimlik Havuz" },
+    { href: "/#amenities", label: "Ucretsiz WiFi" },
+    { href: "/#amenities", label: "Ucretsiz Otopark" },
   ],
 };
 

@@ -3,7 +3,8 @@ import { hotelInfo, rooms } from "./data";
 export function generateHotelJsonLd() {
   return {
     "@context": "https://schema.org",
-    "@type": "Hotel",
+    "@type": "LodgingBusiness",
+    "@id": "https://palmaalacati.com",
     name: hotelInfo.fullName,
     description: hotelInfo.description,
     url: "https://palmaalacati.com",
@@ -11,10 +12,10 @@ export function generateHotelJsonLd() {
     email: hotelInfo.email,
     address: {
       "@type": "PostalAddress",
-      streetAddress: "1005 Sokak No:12",
+      streetAddress: "2055. Sokak No:4, Hacimemis Mahallesi",
       addressLocality: "Alacati, Cesme",
       addressRegion: "Izmir",
-      postalCode: "35937",
+      postalCode: "35930",
       addressCountry: "TR",
     },
     geo: {
@@ -23,20 +24,29 @@ export function generateHotelJsonLd() {
       longitude: hotelInfo.coordinates.lng,
     },
     image: "/images/hotel/325f6644.jpg",
-    starRating: {
-      "@type": "Rating",
-      ratingValue: "4",
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: hotelInfo.googleRating,
+      reviewCount: hotelInfo.googleReviewCount,
+      bestRating: 5,
     },
-    priceRange: "$$$$",
+    priceRange: "$$$",
     checkinTime: hotelInfo.checkIn,
     checkoutTime: hotelInfo.checkOut,
+    numberOfRooms: 5,
+    petsAllowed: false,
+    availableLanguage: [
+      { "@type": "Language", name: "Turkish" },
+      { "@type": "Language", name: "English" },
+      { "@type": "Language", name: "Italian" },
+    ],
     amenityFeature: [
-      { "@type": "LocationFeatureSpecification", name: "Acik Yuzme Havuzu", value: true },
+      { "@type": "LocationFeatureSpecification", name: "Mevsimlik Acik Havuz", value: true },
       { "@type": "LocationFeatureSpecification", name: "Ucretsiz WiFi", value: true },
       { "@type": "LocationFeatureSpecification", name: "Ucretsiz Otopark", value: true },
-      { "@type": "LocationFeatureSpecification", name: "Restoran", value: true },
-      { "@type": "LocationFeatureSpecification", name: "SPA", value: true },
-      { "@type": "LocationFeatureSpecification", name: "Kahvalti Dahil", value: true },
+      { "@type": "LocationFeatureSpecification", name: "Klima", value: true },
+      { "@type": "LocationFeatureSpecification", name: "Ozel Mutfak", value: true },
+      { "@type": "LocationFeatureSpecification", name: "Bahce", value: true },
     ],
     containsPlace: rooms.map((room) => ({
       "@type": "HotelRoom",
@@ -112,11 +122,5 @@ export function generateRoomJsonLd(room: (typeof rooms)[0]) {
       name: a,
       value: true,
     })),
-    offers: {
-      "@type": "Offer",
-      priceCurrency: "TRY",
-      price: room.price.replace(".", ""),
-      availability: "https://schema.org/InStock",
-    },
   };
 }

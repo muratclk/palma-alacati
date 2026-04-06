@@ -22,22 +22,23 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://palmaalacati.com"),
   title: {
-    default: "Palma Alacati | Butik Otel - Alacati, Cesme",
+    default: "Palma Alacati | Butik Apart Otel - Alacati, Cesme",
     template: "%s | Palma Alacati",
   },
   description:
-    "Alacati'nin kalbinde, geleneksel tas mimarisi ile modern konforu bulusturan butik otel. Ozel odalar, Ege kahvaltisi, havuz ve SPA hizmetleri. Rezervasyon icin hemen arayin.",
+    "Alacati Hacimemis'te 5 ozel tasarimli daire ile butik apart otel deneyimi. Ozel mutfak, mevsimlik havuz, ucretsiz WiFi ve otopark. Rezervasyon: 0546 697 65 60",
   keywords: [
-    "alacati otel",
+    "alacati apart otel",
     "alacati butik otel",
-    "cesme otel",
+    "cesme apart otel",
     "alacati konaklama",
     "palma alacati",
     "alacati tatil",
-    "ege tatil",
-    "alacati boutique hotel",
+    "alacati kiralık daire",
+    "alacati boutique apart hotel",
     "cesme boutique hotel",
     "alacati accommodation",
+    "hacimemis alacati",
   ],
   authors: [{ name: "Palma Alacati" }],
   creator: "Palma Alacati",
@@ -46,9 +47,9 @@ export const metadata: Metadata = {
     locale: "tr_TR",
     url: "https://palmaalacati.com",
     siteName: "Palma Alacati",
-    title: "Palma Alacati | Butik Otel - Alacati, Cesme",
+    title: "Palma Alacati | Butik Apart Otel - Alacati, Cesme",
     description:
-      "Alacati'nin kalbinde, geleneksel tas mimarisi ile modern konforu bulusturan butik otel deneyimi.",
+      "Alacati Hacimemis'te 5 ozel tasarimli daire ile butik apart otel deneyimi.",
     images: [
       {
         url: "/images/hotel/325f6644.jpg",
@@ -60,9 +61,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Palma Alacati | Butik Otel - Alacati, Cesme",
+    title: "Palma Alacati | Butik Apart Otel - Alacati, Cesme",
     description:
-      "Alacati'nin kalbinde butik otel deneyimi. Ozel odalar, Ege kahvaltisi, havuz ve SPA.",
+      "Alacati Hacimemis'te butik apart otel. 5 ozel daire, havuz, ucretsiz WiFi ve otopark.",
     images: ["/images/hotel/325f6644.jpg"],
   },
   robots: {

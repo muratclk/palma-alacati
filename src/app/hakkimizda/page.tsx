@@ -6,15 +6,15 @@ import { generateBreadcrumbJsonLd } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "Hakkimizda",
   description:
-    "Palma Alacati'nin hikayesi. Alacati'nin tarihi dokusunda, geleneksel Ege mimarisi ile modern konforu bulusturan butik otel deneyimimizi kesfin.",
+    "Palma Alacati'nin hikayesi. Alacati Hacimemis'te 5 ozel tasarimli dairesi ile butik apart otel deneyimimizi kesfin.",
   alternates: { canonical: "https://palmaalacati.com/hakkimizda" },
 };
 
 const timeline = [
-  { year: "2009", title: "Kurulusumuz", description: "Palma Alacati, Alacati'nin tarihi merkezinde kapılarini acti." },
-  { year: "2015", title: "Renovasyon", description: "Tum odalar yenilendi, havuz ve SPA alani eklendi." },
-  { year: "2020", title: "Surdurulebilirlik", description: "Gunes enerjisi ve organik bahce projeleri hayata gecirildi." },
-  { year: "2024", title: "Yeni Donem", description: "Cati kati suite ve restoran konsepti ile yenilenen deneyim." },
+  { year: "2022", title: "Kurulusumuz", description: "Palma Alacati, Hacimemis Mahallesi'nde butik apart otel olarak hayata gecti." },
+  { year: "2023", title: "Buyume", description: "Yeni daireler eklendi, mevsimlik acik havuz hizmete acildi." },
+  { year: "2024", title: "Gelisim", description: "Aegean Suit ve Deluxe Apart Duplex konseptleri ile premium deneyim sunulmaya baslandi." },
+  { year: "2025", title: "Yeni Donem", description: "Google'da 4.9 puan ile Alacati'nin en ozel adreslerinden biri olarak anilmaya baslandi." },
 ];
 
 const values = [
@@ -85,29 +85,29 @@ export default function AboutPage() {
                 <span className="text-sage italic"> Yasatiyoruz</span>
               </h2>
               <p className="mt-6 text-warm-gray leading-relaxed text-lg">
-                Palma Alacati, 2009 yilinda Alacati&apos;nin tarihi merkezinde,
-                yuzlerce yillik bir tas evin ozenle restorasyonu ile hayata
-                gecti. Amacimiz, Ege&apos;nin essiz yasam kulturunu, modern
+                Palma Alacati, 2022 yilinda Alacati&apos;nin Hacimemis
+                Mahallesi&apos;nde butik apart otel olarak hayata gecti.
+                Amacimiz, Ege&apos;nin essiz yasam kulturunu, modern
                 konfor ve kisisellestirilmis hizmet anlayisiyla bulusturmakti.
               </p>
               <p className="mt-4 text-warm-gray leading-relaxed">
-                Bugn 6 ozel odamiz, organik bahcemiz, acik havuzumuz ve
-                restoranimiz ile misafirlerimize unutulmaz anlar yasatmaya devam
-                ediyoruz. Her detayimizda Alacati&apos;nin sicakligini, dogalligi
-                ve zarafetini hissedeceksiniz.
+                Bugun 5 ozel tasarimli dairemiz, yesilliklere cevrili
+                bahcemiz ve mevsimlik acik havuzumuz ile misafirlerimize
+                unutulmaz anlar yasatmaya devam ediyoruz. Her dairemiz kendine
+                ozgu ic tasarimi ve ozel mutfagi ile fark yaratiyor.
               </p>
               <div className="mt-8 grid grid-cols-3 gap-6">
                 <div className="text-center">
-                  <span className="font-heading text-4xl text-sage">15+</span>
-                  <span className="block text-sm text-warm-gray mt-1">Yil Deneyim</span>
-                </div>
-                <div className="text-center">
-                  <span className="font-heading text-4xl text-sage">2000+</span>
-                  <span className="block text-sm text-warm-gray mt-1">Mutlu Misafir</span>
+                  <span className="font-heading text-4xl text-sage">5</span>
+                  <span className="block text-sm text-warm-gray mt-1">Ozel Daire</span>
                 </div>
                 <div className="text-center">
                   <span className="font-heading text-4xl text-sage">4.9</span>
-                  <span className="block text-sm text-warm-gray mt-1">Ortalama Puan</span>
+                  <span className="block text-sm text-warm-gray mt-1">Google Puani</span>
+                </div>
+                <div className="text-center">
+                  <span className="font-heading text-4xl text-sage">3</span>
+                  <span className="block text-sm text-warm-gray mt-1">Dil Destegi</span>
                 </div>
               </div>
             </ScrollReveal>

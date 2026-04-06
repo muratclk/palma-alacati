@@ -9,7 +9,7 @@ import { generateBreadcrumbJsonLd } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "Odalar & Suitler",
   description:
-    "Palma Alacati'nin ozenle tasarlanmis odalari ve suitleri. Grand Suite, Deluxe Suite, Superior Oda ve daha fazlasi. Alacati'nin en guzel butik otel odalari.",
+    "Palma Alacati'nin 5 ozel tasarimli dairesi. Aegean Suit, Deluxe Apart Duplex, Design Apart, Acqua ve Curva. Her biri ozel mutfakli, Alacati'nin en ozel butik apart oteli.",
   alternates: { canonical: "https://palmaalacati.com/odalar" },
 };
 
@@ -39,10 +39,10 @@ export default function RoomsPage() {
         <div className="relative text-center px-4">
           <SectionLabel text="Konaklama" className="[&]:text-stone-light [&::before]:bg-stone/50 [&::after]:bg-stone/50" />
           <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl text-white mt-4">
-            Odalar &amp; Suitler
+            Daireler &amp; Suitler
           </h1>
           <p className="text-white/70 mt-4 text-lg max-w-xl mx-auto">
-            Her biri Alacati&apos;nin ruhunu yansitan, ozenle tasarlanmis odalarimiz
+            Her biri kendine ozgu tasarimi ve ozel mutfagi ile 5 ozel daire
           </p>
         </div>
       </section>
@@ -107,11 +107,14 @@ export default function RoomsPage() {
                     </div>
                     <div className="mt-6 flex items-center justify-between">
                       <span className="font-heading text-2xl text-stone">
-                        {room.price} TL
-                        <span className="text-warm-gray text-sm font-sans">
-                          {" "}
-                          / gece
-                        </span>
+                        {room.price
+                          ? `${room.price} TL`
+                          : "Fiyat Icin Arayin"}
+                        {room.price && (
+                          <span className="text-warm-gray text-sm font-sans">
+                            {" "}/ gece
+                          </span>
+                        )}
                       </span>
                       <Link
                         href={`/odalar/${room.slug}`}

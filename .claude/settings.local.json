@@ -11,7 +11,9 @@
       "Bash(gh repo:*)",
       "Bash(node -e \":*)",
       "Bash(bash download_images.sh)",
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "WebFetch(domain:www.otelz.com)",
+      "WebFetch(domain:tr.hotels.com)"
     ]
   }
 }

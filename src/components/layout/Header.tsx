@@ -6,8 +6,7 @@ import { Menu, X, Phone, Mail } from "lucide-react";
 
 const navLinks = [
   { href: "/", label: "Ana Sayfa" },
-  { href: "/odalar", label: "Odalar" },
-  { href: "/restoran", label: "Restoran" },
+  { href: "/odalar", label: "Daireler" },
   { href: "/galeri", label: "Galeri" },
   { href: "/hakkimizda", label: "Hakkimizda" },
   { href: "/iletisim", label: "Iletisim" },

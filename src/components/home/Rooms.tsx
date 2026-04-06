@@ -15,11 +15,11 @@ export default function Rooms() {
         <ScrollReveal className="text-center mb-16">
           <SectionLabel text="Odalar" />
           <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-charcoal mt-4">
-            Odalar &amp; Suitler
+            Daireler &amp; Suitler
           </h2>
           <p className="mt-4 text-warm-gray max-w-2xl mx-auto text-base md:text-lg">
-            Her biri ozenle tasarlanmis odalarimizda, Alacati&apos;nin essiz
-            dokusunu hissedin.
+            Her biri kendine ozgu tasarimi ve ozel mutfagi ile 5 ozel dairemizde
+            Alacati&apos;nin huzurunu yasayin.
           </p>
         </ScrollReveal>
 
@@ -61,7 +61,7 @@ export default function Rooms() {
                     </p>
                     <div className="mt-4 flex items-center justify-between">
                       <span className="text-stone-light text-sm">
-                        {room.price} TL / gece
+                        {room.price ? `${room.price} TL / gece` : "Fiyat icin arayin"}
                       </span>
                       <span className="inline-flex items-center gap-1 text-white/60 text-xs uppercase tracking-wider group-hover:text-stone-light transition-colors">
                         Incele

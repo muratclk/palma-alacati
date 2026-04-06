@@ -88,13 +88,12 @@ export default function ContactContent() {
                 <div>
                   <label className="block text-sm text-charcoal mb-1.5">Oda Tercihi</label>
                   <select className="w-full px-4 py-3 bg-white border border-border rounded-lg text-sm focus:outline-none focus:border-sage transition-colors appearance-none">
-                    <option value="">Oda Seciniz</option>
-                    <option value="grand-suite">Grand Suite</option>
-                    <option value="deluxe-suite">Deluxe Suite</option>
-                    <option value="cati-kati-suite">Cati Kati Suite</option>
-                    <option value="superior-oda">Superior Oda</option>
-                    <option value="bahce-oda">Bahce Oda</option>
-                    <option value="standart-oda">Standart Oda</option>
+                    <option value="">Daire Seciniz</option>
+                    <option value="aegean-suit">Aegean Suit</option>
+                    <option value="deluxe-apart-duplex">Deluxe Apart Duplex</option>
+                    <option value="design-apart">Design Apart Daire</option>
+                    <option value="acqua">Acqua</option>
+                    <option value="curva">Curva</option>
                   </select>
                 </div>
                 <div>

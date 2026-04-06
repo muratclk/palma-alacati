@@ -153,12 +153,20 @@ export default async function RoomDetailPage({
               <ScrollReveal>
                 <div className="bg-white rounded-2xl p-6 shadow-sm border border-border sticky top-28">
                   <div className="text-center border-b border-border pb-6 mb-6">
-                    <span className="font-heading text-4xl text-stone">
-                      {room.price} TL
-                    </span>
-                    <span className="text-warm-gray text-sm block mt-1">
-                      / gece (kahvalti dahil)
-                    </span>
+                    {room.price ? (
+                      <>
+                        <span className="font-heading text-4xl text-stone">
+                          {room.price} TL
+                        </span>
+                        <span className="text-warm-gray text-sm block mt-1">
+                          / gece
+                        </span>
+                      </>
+                    ) : (
+                      <span className="font-heading text-2xl text-stone">
+                        Fiyat Icin Arayin
+                      </span>
+                    )}
                   </div>
 
                   {/* Room details */}
