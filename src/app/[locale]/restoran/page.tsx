@@ -1,32 +1,47 @@
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import SectionLabel from "@/components/ui/SectionLabel";
 import { generateBreadcrumbJsonLd } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Restoran - Ege Mutfağı",
-  description:
-    "Palma Alacati restoran. Organik ve yerel malzemelerle hazırlanan Ege mutfağı lezzetleri. Açık büfe kahvaltı, öğle ve akşam yemeği servisi.",
-  alternates: { canonical: "https://palmaalacati.com/restoran" },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "seo" });
+
+  return {
+    title: t("restaurantTitle"),
+    description: t("restaurantDescription"),
+    alternates: {
+      canonical: `https://palmaalacati.com/${locale}/restoran`,
+      languages: {
+        tr: "https://palmaalacati.com/tr/restoran",
+        en: "https://palmaalacati.com/en/restoran",
+      },
+    },
+  };
+}
 
 const menuCategories = [
   {
-    title: "Kahvaltı",
+    title: "Kahvalti",
     time: "08:00 - 11:00",
-    description: "Her sabah taze hazırlanan zengin Ege kahvaltısı. Köyde üretilen peynirler, zeytinyağı, taze ekmek, reçel çeşitleri ve mevsim meyveleri.",
+    description: "Her sabah taze hazirlanan zengin Ege kahvaltisi. Koyde uretilen peynirler, zeytinyagi, taze ekmek, recel cesitleri ve mevsim meyveleri.",
     image: "/images/rooms/1841de9d.jpg",
   },
   {
-    title: "Öğle Yemeği",
+    title: "Ogle Yemegi",
     time: "12:00 - 15:00",
-    description: "Hafif Akdeniz lezzetleri, taze salatalar, zeytinyağlı yemekler ve deniz ürünleri. Havuz başında veya restoran terasında servis edilir.",
+    description: "Hafif Akdeniz lezzetleri, taze salatalar, zeytinyagli yemekler ve deniz urunleri. Havuz basinda veya restoran terasinda servis edilir.",
     image: "/images/rooms/438a19c2.jpg",
   },
   {
-    title: "Akşam Yemeği",
+    title: "Aksam Yemegi",
     time: "19:00 - 22:00",
-    description: "Şefimizin özenle hazırladığı özel menü. Ege'nin en iyi malzemeleriyle hazırlanan, mevsime göre değişen lezzetler. Rezervasyon önerilir.",
+    description: "Sefimizin ozenle hazirladigi ozel menu. Ege'nin en iyi malzemeleriyle hazirlanan, mevsime gore degisen lezzetler. Rezervasyon onerilir.",
     image: "/images/rooms/4001fb51.jpg",
   },
 ];
@@ -37,15 +52,15 @@ const specialFeatures = [
     description: "Restoranımızda kullanılan otların ve sebzelerin bir kısmı kendi organik bahçemizden toplanmaktadır.",
   },
   {
-    title: "Yerel Üretici",
+    title: "Yerel Uretici",
     description: "Peynir, zeytinyağı ve şarküteri ürünlerimiz Alaçatı ve çevresindeki yerel üreticilerden temin edilmektedir.",
   },
   {
-    title: "Şarap Menüsü",
+    title: "Sarap Menusu",
     description: "Ege bölgesinin seçkin bağlarından özenle seçilmiş şaraplar, yemeklerinize eşlik etmek için hazır.",
   },
   {
-    title: "Özel Etkinlik",
+    title: "Ozel Etkinlik",
     description: "Doğum günü, yıldönümü veya özel geceler için kişiye özel menü ve dekorasyon hazırlanabilir.",
   },
 ];
@@ -88,15 +103,15 @@ export default function RestaurantPage() {
       <section className="py-24 md:py-32 bg-cream">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal className="text-center max-w-3xl mx-auto mb-20">
-            <SectionLabel text="Ege Mutfağı" />
+            <SectionLabel text="Ege Mutfagi" />
             <h2 className="font-heading text-4xl md:text-5xl text-charcoal mt-4">
               Tabaktan <span className="text-stone italic">Sofralara</span>
             </h2>
             <p className="mt-6 text-warm-gray text-lg leading-relaxed">
-              Palma Alacati mutfağında, Ege&apos;nin zengin gastronomik mirasını
-              modern sunumlarla birleştiriyoruz. Bahçemizden toplanan taze otlar,
-              yerel üreticilerden gelen peynirler ve zeytinyağları ile hazırlanan
-              yemeklerimiz, her lokmasıyla Alaçatı&apos;nın tadını sunar.
+              Palma Alacati mutfaginda, Ege&apos;nin zengin gastronomik mirasini
+              modern sunumlarla birlestiriyoruz. Bahcemizden toplanan taze otlar,
+              yerel ureticilerden gelen peynirler ve zeytinyaglari ile hazirlanan
+              yemeklerimiz, her lokmasiyla Alacati&apos;nin tadini sunar.
             </p>
           </ScrollReveal>
 
@@ -139,9 +154,9 @@ export default function RestaurantPage() {
       <section className="py-24 md:py-32 bg-cream-dark/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal className="text-center mb-16">
-            <SectionLabel text="Özellikler" />
+            <SectionLabel text="Ozellikler" />
             <h2 className="font-heading text-4xl md:text-5xl text-charcoal mt-4">
-              Bizi Özel Kılan <span className="text-sage italic">Detaylar</span>
+              Bizi Ozel Kilan <span className="text-sage italic">Detaylar</span>
             </h2>
           </ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -177,16 +192,16 @@ export default function RestaurantPage() {
         </div>
         <div className="relative text-center max-w-2xl mx-auto px-4">
           <h2 className="font-heading text-4xl text-white">
-            Rezervasyon Yapın
+            Rezervasyon Yapin
           </h2>
           <p className="text-white/70 mt-4">
-            Akşam yemeği için önceden rezervasyon yapmanızı öneririz.
+            Aksam yemegi icin onceden rezervasyon yapmanizi oneririz.
           </p>
           <a
             href="tel:+902327160000"
             className="inline-flex items-center gap-2 mt-8 px-8 py-3.5 bg-stone text-white text-sm tracking-[0.15em] uppercase font-medium hover:bg-stone-dark transition-colors"
           >
-            Hemen Arayın
+            Hemen Arayin
           </a>
         </div>
       </section>

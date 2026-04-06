@@ -1,33 +1,48 @@
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import SectionLabel from "@/components/ui/SectionLabel";
 import { generateBreadcrumbJsonLd } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Hakkımızda",
-  description:
-    "Palma Alaçatı'nın hikayesi. Alaçatı Hacımemiş'te 5 özel tasarımlı dairesi ile butik apart otel deneyimimizi keşfin.",
-  alternates: { canonical: "https://palmaalacati.com/hakkimizda" },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "seo" });
+
+  return {
+    title: t("aboutTitle"),
+    description: t("aboutDescription"),
+    alternates: {
+      canonical: `https://palmaalacati.com/${locale}/hakkimizda`,
+      languages: {
+        tr: "https://palmaalacati.com/tr/hakkimizda",
+        en: "https://palmaalacati.com/en/hakkimizda",
+      },
+    },
+  };
+}
 
 const timeline = [
-  { year: "2022", title: "Kuruluşumuz", description: "Palma Alacati, Hacımemiş Mahallesi'nde butik apart otel olarak hayata geçti." },
-  { year: "2023", title: "Büyüme", description: "Yeni daireler eklendi, mevsimlik açık havuz hizmete açıldı." },
-  { year: "2024", title: "Gelişim", description: "Aegean Suit ve Deluxe Apart Duplex konseptleri ile premium deneyim sunulmaya başlandı." },
-  { year: "2025", title: "Yeni Dönem", description: "Google'da 4.9 puan ile Alaçatı'nın en özel adreslerinden biri olarak anılmaya başlandı." },
+  { year: "2022", title: "Kurulusumuz", description: "Palma Alacati, Hacimemis Mahallesi'nde butik apart otel olarak hayata gecti." },
+  { year: "2023", title: "Buyume", description: "Yeni daireler eklendi, mevsimlik acik havuz hizmete acildi." },
+  { year: "2024", title: "Gelisim", description: "Aegean Suit ve Deluxe Apart Duplex konseptleri ile premium deneyim sunulmaya baslandi." },
+  { year: "2025", title: "Yeni Donem", description: "Google'da 4.9 puan ile Alacati'nin en ozel adreslerinden biri olarak anilmaya baslandi." },
 ];
 
 const values = [
-  { title: "Misafirperverlik", description: "Her misafirimizi ailemizin bir parçası olarak görüyor, sıcak ve samimi bir karşılama sunuyoruz." },
-  { title: "Sürdürülebilirlik", description: "Doğaya saygı ilkemizle, organik malzemeler ve yenilenebilir enerji kullanıyoruz." },
-  { title: "Özgünlük", description: "Alaçatı'nın tarihi ve kültürel dokusunu koruyarak, otantik bir deneyim yaratıyoruz." },
-  { title: "Mükemmellik", description: "Her detayda en yüksek kaliteyi hedefliyor, sürekli kendimizi geliştiriyoruz." },
+  { title: "Misafirperverlik", description: "Her misafirimizi ailemizin bir parcasi olarak goruyor, sicak ve samimi bir karsilama sunuyoruz." },
+  { title: "Surdurulebilirlik", description: "Dogaya saygi ilkemizle, organik malzemeler ve yenilenebilir enerji kullaniyoruz." },
+  { title: "Ozgunluk", description: "Alacati'nin tarihi ve kulturel dokusunu koruyarak, otantik bir deneyim yaratiyoruz." },
+  { title: "Mukemmellik", description: "Her detayda en yuksek kaliteyi hedefliyor, surekli kendimizi gelistiriyoruz." },
 ];
 
 export default function AboutPage() {
   const breadcrumbJsonLd = generateBreadcrumbJsonLd([
     { name: "Ana Sayfa", url: "https://palmaalacati.com" },
-    { name: "Hakkımızda", url: "https://palmaalacati.com/hakkimizda" },
+    { name: "Hakkimizda", url: "https://palmaalacati.com/hakkimizda" },
   ]);
 
   return (
@@ -50,7 +65,7 @@ export default function AboutPage() {
         <div className="relative text-center px-4">
           <SectionLabel text="Hikayemiz" className="[&]:text-stone-light [&::before]:bg-stone/50 [&::after]:bg-stone/50" />
           <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl text-white mt-4">
-            Hakkımızda
+            Hakkimizda
           </h1>
         </div>
       </section>
@@ -71,7 +86,7 @@ export default function AboutPage() {
                 </div>
                 <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl p-6 shadow-lg border border-border">
                   <blockquote className="font-heading text-lg text-charcoal italic max-w-[200px]">
-                    &ldquo;Her misafir, ailemizin bir parçasıdır.&rdquo;
+                    &ldquo;Her misafir, ailemizin bir parcasidir.&rdquo;
                   </blockquote>
                   <p className="text-stone text-sm mt-2">-- Palma Ailesi</p>
                 </div>
@@ -82,32 +97,32 @@ export default function AboutPage() {
               <SectionLabel text="Hikayemiz" />
               <h2 className="font-heading text-4xl md:text-5xl text-charcoal mt-4 leading-[1.15]">
                 Ege Ruhunu
-                <span className="text-sage italic"> Yaşatıyoruz</span>
+                <span className="text-sage italic"> Yasatiyoruz</span>
               </h2>
               <p className="mt-6 text-warm-gray leading-relaxed text-lg">
-                Palma Alacati, 2022 yılında Alaçatı&apos;nın Hacımemiş
-                Mahallesi&apos;nde butik apart otel olarak hayata geçti.
-                Amacımız, Ege&apos;nin eşsiz yaşam kültürünü, modern
-                konfor ve kişiselleştirilmiş hizmet anlayışıyla buluşturmaktı.
+                Palma Alacati, 2022 yilinda Alacati&apos;nin Hacimemis
+                Mahallesi&apos;nde butik apart otel olarak hayata gecti.
+                Amacimiz, Ege&apos;nin essiz yasam kulturunu, modern
+                konfor ve kisisellestirilmis hizmet anlayisiyla bulusturmakti.
               </p>
               <p className="mt-4 text-warm-gray leading-relaxed">
-                Bugün 5 özel tasarımlı dairemiz, yeşilliklere çevrili
-                bahçemiz ve mevsimlik açık havuzumuz ile misafirlerimize
-                unutulmaz anlar yaşatmaya devam ediyoruz. Her dairemiz kendine
-                özgü iç tasarımı ve özel mutfağı ile fark yaratıyor.
+                Bugun 5 ozel tasarimli dairemiz, yesilliklerle cevrili
+                bahcemiz ve mevsimlik acik havuzumuz ile misafirlerimize
+                unutulmaz anlar yasatmaya devam ediyoruz. Her dairemiz kendine
+                ozgu ic tasarimi ve ozel mutfagi ile fark yaratiyor.
               </p>
               <div className="mt-8 grid grid-cols-3 gap-6">
                 <div className="text-center">
                   <span className="font-heading text-4xl text-sage">5</span>
-                  <span className="block text-sm text-warm-gray mt-1">Özel Daire</span>
+                  <span className="block text-sm text-warm-gray mt-1">Ozel Daire</span>
                 </div>
                 <div className="text-center">
                   <span className="font-heading text-4xl text-sage">4.9</span>
-                  <span className="block text-sm text-warm-gray mt-1">Google Puanı</span>
+                  <span className="block text-sm text-warm-gray mt-1">Google Puani</span>
                 </div>
                 <div className="text-center">
                   <span className="font-heading text-4xl text-sage">3</span>
-                  <span className="block text-sm text-warm-gray mt-1">Dil Desteği</span>
+                  <span className="block text-sm text-warm-gray mt-1">Dil Destegi</span>
                 </div>
               </div>
             </ScrollReveal>
@@ -119,9 +134,9 @@ export default function AboutPage() {
       <section className="py-24 md:py-32 bg-cream-dark/50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal className="text-center mb-16">
-            <SectionLabel text="Yolculuğumuz" />
+            <SectionLabel text="Yolculugumuz" />
             <h2 className="font-heading text-4xl md:text-5xl text-charcoal mt-4">
-              Zaman <span className="text-stone italic">Çizelgesi</span>
+              Zaman <span className="text-stone italic">Cizelgesi</span>
             </h2>
           </ScrollReveal>
 
@@ -152,9 +167,9 @@ export default function AboutPage() {
       <section className="py-24 md:py-32 bg-cream">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal className="text-center mb-16">
-            <SectionLabel text="Değerlerimiz" />
+            <SectionLabel text="Degerlerimiz" />
             <h2 className="font-heading text-4xl md:text-5xl text-charcoal mt-4">
-              Bizi Biz Yapan <span className="text-sage italic">Değerler</span>
+              Bizi Biz Yapan <span className="text-sage italic">Degerler</span>
             </h2>
           </ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

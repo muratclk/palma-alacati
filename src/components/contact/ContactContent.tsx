@@ -1,11 +1,27 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { Phone, Mail, MapPin, Clock, Camera } from "lucide-react";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import SectionLabel from "@/components/ui/SectionLabel";
-import { hotelInfo, faqItems } from "@/lib/data";
+import { hotelInfo } from "@/lib/data";
 
 export default function ContactContent() {
+  const t = useTranslations("contact");
+  const faq = useTranslations("faq");
+
+  const faqItems = [
+    { question: faq("q1"), answer: faq("a1") },
+    { question: faq("q2"), answer: faq("a2") },
+    { question: faq("q3"), answer: faq("a3") },
+    { question: faq("q4"), answer: faq("a4") },
+    { question: faq("q5"), answer: faq("a5") },
+    { question: faq("q6"), answer: faq("a6") },
+    { question: faq("q7"), answer: faq("a7") },
+    { question: faq("q8"), answer: faq("a8") },
+    { question: faq("q9"), answer: faq("a9") },
+  ];
+
   return (
     <>
       {/* Hero */}
@@ -19,9 +35,9 @@ export default function ContactContent() {
           <div className="absolute inset-0 bg-charcoal/50" />
         </div>
         <div className="relative text-center px-4">
-          <SectionLabel text="Bize Ulaşın" className="[&]:text-stone-light [&::before]:bg-stone/50 [&::after]:bg-stone/50" />
+          <SectionLabel text={t("heroLabel")} className="[&]:text-stone-light [&::before]:bg-stone/50 [&::after]:bg-stone/50" />
           <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl text-white mt-4">
-            İletişim
+            {t("heroHeading")}
           </h1>
         </div>
       </section>
@@ -32,10 +48,10 @@ export default function ContactContent() {
           {/* Contact cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
             {[
-              { icon: Phone, title: "Telefon", value: hotelInfo.phone, href: `tel:${hotelInfo.phone}` },
-              { icon: Mail, title: "E-posta", value: hotelInfo.email, href: `mailto:${hotelInfo.email}` },
-              { icon: MapPin, title: "Adres", value: hotelInfo.address, href: "#map" },
-              { icon: Clock, title: "Giriş / Çıkış", value: `Check-in: ${hotelInfo.checkIn} / Check-out: ${hotelInfo.checkOut}`, href: undefined },
+              { icon: Phone, title: t("phone"), value: hotelInfo.phone, href: `tel:${hotelInfo.phone}` },
+              { icon: Mail, title: t("email"), value: hotelInfo.email, href: `mailto:${hotelInfo.email}` },
+              { icon: MapPin, title: t("addressTitle"), value: hotelInfo.address, href: "#map" },
+              { icon: Clock, title: t("checkInOutTitle"), value: `Check-in: ${hotelInfo.checkIn} / Check-out: ${hotelInfo.checkOut}`, href: undefined },
             ].map((card) => (
               <ScrollReveal key={card.title}>
                 <div className="bg-white rounded-2xl p-8 shadow-sm border border-border text-center h-full hover:shadow-md transition-shadow">
@@ -56,39 +72,39 @@ export default function ContactContent() {
           {/* Form + Map */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <ScrollReveal direction="left">
-              <SectionLabel text="Rezervasyon" />
+              <SectionLabel text={t("reservationLabel")} />
               <h2 className="font-heading text-3xl md:text-4xl text-charcoal mt-4 mb-8">
-                Rezervasyon <span className="text-stone italic">Formu</span>
+                {t("formHeading1")} <span className="text-stone italic">{t("formHeading2")}</span>
               </h2>
               <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-sm text-charcoal mb-1.5">Ad Soyad</label>
-                    <input type="text" className="w-full px-4 py-3 bg-white border border-border rounded-lg text-sm focus:outline-none focus:border-sage transition-colors" placeholder="Adınız Soyadınız" />
+                    <label className="block text-sm text-charcoal mb-1.5">{t("fullName")}</label>
+                    <input type="text" className="w-full px-4 py-3 bg-white border border-border rounded-lg text-sm focus:outline-none focus:border-sage transition-colors" placeholder={t("fullNamePlaceholder")} />
                   </div>
                   <div>
-                    <label className="block text-sm text-charcoal mb-1.5">Telefon</label>
-                    <input type="tel" className="w-full px-4 py-3 bg-white border border-border rounded-lg text-sm focus:outline-none focus:border-sage transition-colors" placeholder="+90 5XX XXX XX XX" />
+                    <label className="block text-sm text-charcoal mb-1.5">{t("phone")}</label>
+                    <input type="tel" className="w-full px-4 py-3 bg-white border border-border rounded-lg text-sm focus:outline-none focus:border-sage transition-colors" placeholder={t("phonePlaceholder")} />
                   </div>
                 </div>
                 <div>
-                  <label className="block text-sm text-charcoal mb-1.5">E-posta</label>
-                  <input type="email" className="w-full px-4 py-3 bg-white border border-border rounded-lg text-sm focus:outline-none focus:border-sage transition-colors" placeholder="ornek@email.com" />
+                  <label className="block text-sm text-charcoal mb-1.5">{t("emailLabel")}</label>
+                  <input type="email" className="w-full px-4 py-3 bg-white border border-border rounded-lg text-sm focus:outline-none focus:border-sage transition-colors" placeholder={t("emailPlaceholder")} />
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-sm text-charcoal mb-1.5">Giriş Tarihi</label>
+                    <label className="block text-sm text-charcoal mb-1.5">{t("checkInDate")}</label>
                     <input type="date" className="w-full px-4 py-3 bg-white border border-border rounded-lg text-sm focus:outline-none focus:border-sage transition-colors" />
                   </div>
                   <div>
-                    <label className="block text-sm text-charcoal mb-1.5">Çıkış Tarihi</label>
+                    <label className="block text-sm text-charcoal mb-1.5">{t("checkOutDate")}</label>
                     <input type="date" className="w-full px-4 py-3 bg-white border border-border rounded-lg text-sm focus:outline-none focus:border-sage transition-colors" />
                   </div>
                 </div>
                 <div>
-                  <label className="block text-sm text-charcoal mb-1.5">Oda Tercihi</label>
+                  <label className="block text-sm text-charcoal mb-1.5">{t("roomPreference")}</label>
                   <select className="w-full px-4 py-3 bg-white border border-border rounded-lg text-sm focus:outline-none focus:border-sage transition-colors appearance-none">
-                    <option value="">Daire Seçiniz</option>
+                    <option value="">{t("selectRoom")}</option>
                     <option value="aegean-suit">Aegean Suit</option>
                     <option value="deluxe-apart-duplex">Deluxe Apart Duplex</option>
                     <option value="design-apart">Design Apart Daire</option>
@@ -97,11 +113,11 @@ export default function ContactContent() {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-sm text-charcoal mb-1.5">Mesajınız</label>
-                  <textarea rows={4} className="w-full px-4 py-3 bg-white border border-border rounded-lg text-sm focus:outline-none focus:border-sage transition-colors resize-none" placeholder="Özel istekleriniz varsa belirtiniz..." />
+                  <label className="block text-sm text-charcoal mb-1.5">{t("message")}</label>
+                  <textarea rows={4} className="w-full px-4 py-3 bg-white border border-border rounded-lg text-sm focus:outline-none focus:border-sage transition-colors resize-none" placeholder={t("messagePlaceholder")} />
                 </div>
                 <button type="submit" className="w-full py-3.5 bg-stone text-white text-sm tracking-[0.15em] uppercase font-medium hover:bg-stone-dark transition-colors rounded-lg">
-                  Rezervasyon Talebi Gönder
+                  {t("submitButton")}
                 </button>
               </form>
             </ScrollReveal>
@@ -128,9 +144,9 @@ export default function ContactContent() {
       <section className="py-24 md:py-32 bg-cream-dark/50">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal className="text-center mb-12">
-            <SectionLabel text="SSS" />
+            <SectionLabel text={t("faqLabel")} />
             <h2 className="font-heading text-3xl md:text-4xl text-charcoal mt-4">
-              Sık Sorulan <span className="text-stone italic">Sorular</span>
+              {t("faqHeading1")} <span className="text-stone italic">{t("faqHeading2")}</span>
             </h2>
           </ScrollReveal>
           <div className="space-y-4">
@@ -152,11 +168,11 @@ export default function ContactContent() {
       {/* WhatsApp CTA */}
       <section className="py-16 bg-sage text-center">
         <div className="max-w-2xl mx-auto px-4">
-          <h2 className="font-heading text-3xl text-white">Hızlı İletişim</h2>
-          <p className="text-white/70 mt-2">WhatsApp üzerinden anında cevap alın</p>
+          <h2 className="font-heading text-3xl text-white">{t("whatsappHeading")}</h2>
+          <p className="text-white/70 mt-2">{t("whatsappDesc")}</p>
           <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href={`https://wa.me/${hotelInfo.whatsapp.replace(/[^0-9]/g, "")}`} target="_blank" rel="noopener noreferrer" className="px-8 py-3 bg-white text-sage text-sm tracking-[0.15em] uppercase font-medium rounded-lg hover:bg-cream transition-colors">
-              WhatsApp ile Yazın
+              {t("whatsappButton")}
             </a>
             <a href={`https://instagram.com/${hotelInfo.instagram}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-8 py-3 border border-white/40 text-white text-sm tracking-[0.15em] uppercase font-medium rounded-lg hover:bg-white/10 transition-colors">
               <Camera size={16} />

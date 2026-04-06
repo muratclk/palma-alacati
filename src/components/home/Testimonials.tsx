@@ -1,12 +1,14 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import { useTranslations } from "next-intl";
 import { Star, ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import SectionLabel from "@/components/ui/SectionLabel";
 import { testimonials } from "@/lib/data";
 
 export default function Testimonials() {
+  const t = useTranslations("testimonials");
   const [current, setCurrent] = useState(0);
 
   const next = useCallback(
@@ -38,9 +40,9 @@ export default function Testimonials() {
 
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <ScrollReveal>
-          <SectionLabel text="Misafir Yorumlari" className="[&]:text-stone-light [&::before]:bg-stone/50 [&::after]:bg-stone/50" />
+          <SectionLabel text={t("label")} className="[&]:text-stone-light [&::before]:bg-stone/50 [&::after]:bg-stone/50" />
           <h2 className="font-heading text-4xl md:text-5xl text-white mt-4">
-            Misafirlerimiz <span className="text-stone-light italic">Ne Diyor?</span>
+            {t("heading1")} <span className="text-stone-light italic">{t("heading2")}</span>
           </h2>
         </ScrollReveal>
 
@@ -82,7 +84,7 @@ export default function Testimonials() {
             <button
               onClick={prev}
               className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white/60 hover:text-white hover:border-white/60 transition-all"
-              aria-label="Önceki yorum"
+              aria-label={t("prevReview")}
             >
               <ChevronLeft size={18} />
             </button>
@@ -96,14 +98,14 @@ export default function Testimonials() {
                       ? "w-8 h-2 bg-stone-light"
                       : "w-2 h-2 bg-white/30 hover:bg-white/50"
                   }`}
-                  aria-label={`Yorum ${i + 1}`}
+                  aria-label={`${i + 1}`}
                 />
               ))}
             </div>
             <button
               onClick={next}
               className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white/60 hover:text-white hover:border-white/60 transition-all"
-              aria-label="Sonraki yorum"
+              aria-label={t("nextReview")}
             >
               <ChevronRight size={18} />
             </button>

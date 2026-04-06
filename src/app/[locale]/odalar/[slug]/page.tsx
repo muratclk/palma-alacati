@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
   Users,
@@ -10,27 +9,37 @@ import {
   ArrowLeft,
   Phone,
 } from "lucide-react";
+import { Link } from "@/i18n/navigation";
+import { routing } from "@/i18n/routing";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import SectionLabel from "@/components/ui/SectionLabel";
 import { rooms } from "@/lib/data";
 import { generateRoomJsonLd, generateBreadcrumbJsonLd } from "@/lib/seo";
 
 export async function generateStaticParams() {
-  return rooms.map((room) => ({ slug: room.slug }));
+  return routing.locales.flatMap((locale) =>
+    rooms.map((room) => ({ locale, slug: room.slug }))
+  );
 }
 
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ locale: string; slug: string }>;
 }): Promise<Metadata> {
-  const { slug } = await params;
+  const { locale, slug } = await params;
   const room = rooms.find((r) => r.slug === slug);
   if (!room) return {};
   return {
     title: `${room.name} - Odalar`,
     description: `${room.name} - ${room.description.slice(0, 160)}`,
-    alternates: { canonical: `https://palmaalacati.com/odalar/${room.slug}` },
+    alternates: {
+      canonical: `https://palmaalacati.com/${locale}/odalar/${room.slug}`,
+      languages: {
+        tr: `https://palmaalacati.com/tr/odalar/${room.slug}`,
+        en: `https://palmaalacati.com/en/odalar/${room.slug}`,
+      },
+    },
     openGraph: {
       images: [{ url: room.image, width: 800, height: 600, alt: room.name }],
     },
@@ -40,7 +49,7 @@ export async function generateMetadata({
 export default async function RoomDetailPage({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ locale: string; slug: string }>;
 }) {
   const { slug } = await params;
   const room = rooms.find((r) => r.slug === slug);
@@ -82,7 +91,7 @@ export default async function RoomDetailPage({
             className="inline-flex items-center gap-2 text-white/60 text-sm hover:text-white transition-colors mb-4"
           >
             <ArrowLeft size={14} />
-            Tüm Odalar
+            Tum Odalar
           </Link>
           <h1 className="font-heading text-5xl md:text-6xl text-white">
             {room.name}
@@ -94,7 +103,7 @@ export default async function RoomDetailPage({
             </span>
             <span className="flex items-center gap-1.5">
               <Users size={14} />
-              {room.capacity} Kişi
+              {room.capacity} Kisi
             </span>
             <span className="flex items-center gap-1.5">
               <Eye size={14} />
@@ -116,7 +125,7 @@ export default async function RoomDetailPage({
             <div className="lg:col-span-2">
               <ScrollReveal>
                 <h2 className="font-heading text-3xl text-charcoal">
-                  Oda Hakkında
+                  Oda Hakkinda
                 </h2>
                 <p className="mt-4 text-warm-gray leading-relaxed text-lg">
                   {room.description}
@@ -164,7 +173,7 @@ export default async function RoomDetailPage({
                       </>
                     ) : (
                       <span className="font-heading text-2xl text-stone">
-                        Fiyat İçin Arayın
+                        Fiyat Icin Arayin
                       </span>
                     )}
                   </div>
@@ -180,7 +189,7 @@ export default async function RoomDetailPage({
                     <div className="flex items-center justify-between text-sm">
                       <span className="text-warm-gray">Kapasite</span>
                       <span className="text-charcoal font-medium">
-                        {room.capacity} Kişi
+                        {room.capacity} Kisi
                       </span>
                     </div>
                     <div className="flex items-center justify-between text-sm">
@@ -208,7 +217,7 @@ export default async function RoomDetailPage({
                   {/* Amenities */}
                   <div className="mt-6 pt-6 border-t border-border">
                     <h4 className="text-sm font-medium text-charcoal mb-3">
-                      Oda Olanakları
+                      Oda Olanaklari
                     </h4>
                     <div className="space-y-2">
                       {room.amenities.map((a) => (
@@ -233,9 +242,9 @@ export default async function RoomDetailPage({
       <section className="py-16 md:py-24 bg-cream-dark/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal className="text-center mb-12">
-            <SectionLabel text="Diğer Odalar" />
+            <SectionLabel text="Diger Odalar" />
             <h2 className="font-heading text-3xl md:text-4xl text-charcoal mt-4">
-              Diğer Odalarımız
+              Diger Odalarimiz
             </h2>
           </ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 
 export default function NotFound() {
   return (
@@ -8,17 +8,17 @@ export default function NotFound() {
           404
         </span>
         <h1 className="font-heading text-3xl md:text-4xl text-charcoal -mt-8">
-          Sayfa Bulunamadı
+          Sayfa Bulunamadi
         </h1>
         <p className="text-warm-gray mt-4 max-w-md mx-auto">
-          Aradığınız sayfa mevcut değil veya taşındı. Ana sayfaya dönerek
-          keşfetmeye devam edebilirsiniz.
+          Aradiginiz sayfa mevcut degil veya tasindi. Ana sayfaya donerek
+          kesfetmeye devam edebilirsiniz.
         </p>
         <Link
           href="/"
           className="inline-block mt-8 px-8 py-3.5 bg-stone text-white text-sm tracking-[0.15em] uppercase font-medium hover:bg-stone-dark transition-colors"
         >
-          Ana Sayfaya Dön
+          Ana Sayfaya Don
         </Link>
       </div>
     </section>

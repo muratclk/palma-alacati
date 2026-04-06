@@ -1,17 +1,32 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Users, Maximize, ArrowRight } from "lucide-react";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import SectionLabel from "@/components/ui/SectionLabel";
 import { rooms } from "@/lib/data";
 import { generateBreadcrumbJsonLd } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Odalar & Suitler",
-  description:
-    "Palma Alacati'nin 5 özel tasarımlı dairesi. Aegean Suit, Deluxe Apart Duplex, Design Apart, Acqua ve Curva. Her biri özel mutfaklı, Alaçatı'nın en özel butik apart oteli.",
-  alternates: { canonical: "https://palmaalacati.com/odalar" },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "seo" });
+
+  return {
+    title: t("roomsTitle"),
+    description: t("roomsDescription"),
+    alternates: {
+      canonical: `https://palmaalacati.com/${locale}/odalar`,
+      languages: {
+        tr: "https://palmaalacati.com/tr/odalar",
+        en: "https://palmaalacati.com/en/odalar",
+      },
+    },
+  };
+}
 
 export default function RoomsPage() {
   const breadcrumbJsonLd = generateBreadcrumbJsonLd([
@@ -42,7 +57,7 @@ export default function RoomsPage() {
             Daireler &amp; Suitler
           </h1>
           <p className="text-white/70 mt-4 text-lg max-w-xl mx-auto">
-            Her biri kendine özgü tasarımı ve özel mutfağı ile 5 özel daire
+            Her biri kendine ozgu tasarimi ve ozel mutfagi ile 5 ozel daire
           </p>
         </div>
       </section>
@@ -81,7 +96,7 @@ export default function RoomsPage() {
                       </span>
                       <span className="flex items-center gap-1.5">
                         <Users size={14} />
-                        {room.capacity} Kişi
+                        {room.capacity} Kisi
                       </span>
                     </div>
                     <h2 className="font-heading text-3xl md:text-4xl text-charcoal">
@@ -109,7 +124,7 @@ export default function RoomsPage() {
                       <span className="font-heading text-2xl text-stone">
                         {room.price
                           ? `${room.price} TL`
-                          : "Fiyat İçin Arayın"}
+                          : "Fiyat Icin Arayin"}
                         {room.price && (
                           <span className="text-warm-gray text-sm font-sans">
                             {" "}/ gece

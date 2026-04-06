@@ -1,29 +1,25 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import { useTranslations } from "next-intl";
 import { ChevronLeft, ChevronRight, ChevronDown } from "lucide-react";
 
-const slides = [
-  {
-    image: "/images/hotel/325f6644.jpg",
-    title: "Ege'nin Kalbinde\nZarafet",
-    subtitle: "Alaçatı'nın en özel butik otel deneyimi",
-  },
-  {
-    image: "/images/hotel/6a4c7b08.jpg",
-    title: "Huzur Dolu\nAnlar",
-    subtitle: "Zeytin ağaçları arasında unutulmaz bir tatil",
-  },
-  {
-    image: "/images/hotel/9ac599d1.jpg",
-    title: "Ege'nin\nLezzetleri",
-    subtitle: "Organik ve yerel malzemelerle hazırlanan sofra",
-  },
+const slideImages = [
+  "/images/hotel/325f6644.jpg",
+  "/images/hotel/6a4c7b08.jpg",
+  "/images/hotel/9ac599d1.jpg",
 ];
 
 export default function Hero() {
+  const t = useTranslations("hero");
   const [current, setCurrent] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+
+  const slides = [
+    { image: slideImages[0], title: t("slide1Title"), subtitle: t("slide1Subtitle") },
+    { image: slideImages[1], title: t("slide2Title"), subtitle: t("slide2Subtitle") },
+    { image: slideImages[2], title: t("slide3Title"), subtitle: t("slide3Subtitle") },
+  ];
 
   const goTo = useCallback(
     (index: number) => {
@@ -35,8 +31,8 @@ export default function Hero() {
     [isTransitioning]
   );
 
-  const next = useCallback(() => goTo((current + 1) % slides.length), [current, goTo]);
-  const prev = useCallback(() => goTo((current - 1 + slides.length) % slides.length), [current, goTo]);
+  const next = useCallback(() => goTo((current + 1) % slides.length), [current, goTo, slides.length]);
+  const prev = useCallback(() => goTo((current - 1 + slides.length) % slides.length), [current, goTo, slides.length]);
 
   useEffect(() => {
     const timer = setInterval(next, 6000);
@@ -72,7 +68,7 @@ export default function Hero() {
             <h1
               key={current}
               className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white leading-[1.1] tracking-wide animate-[fadeInUp_0.8s_ease-out]"
-              style={{ whiteSpace: "pre-line" }}
+              style={{ whiteSpace: "pre-line", textShadow: "0 2px 20px rgba(0,0,0,0.4)" }}
             >
               {slides[current].title}
             </h1>
@@ -80,7 +76,8 @@ export default function Hero() {
           <div className="overflow-hidden mt-6">
             <p
               key={`sub-${current}`}
-              className="text-white/80 text-lg md:text-xl tracking-wide font-light animate-[fadeInUp_0.8s_ease-out_0.2s_both]"
+              className="text-white/90 text-lg md:text-xl tracking-wide font-light animate-[fadeInUp_0.8s_ease-out_0.2s_both]"
+              style={{ textShadow: "0 1px 10px rgba(0,0,0,0.3)" }}
             >
               {slides[current].subtitle}
             </p>
@@ -88,10 +85,10 @@ export default function Hero() {
 
           {/* Booking widget */}
           <div className="mt-10 animate-[fadeInUp_0.8s_ease-out_0.4s_both]">
-            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 md:p-6 inline-flex flex-col md:flex-row items-end gap-4">
+            <div className="bg-black/30 backdrop-blur-xl border border-white/15 rounded-xl p-4 md:p-6 inline-flex flex-col md:flex-row items-end gap-4 shadow-2xl">
               <div className="flex flex-col gap-1 text-left">
-                <label className="text-white/60 text-xs uppercase tracking-wider">
-                  Giriş
+                <label className="text-white/80 text-xs uppercase tracking-wider font-medium">
+                  {t("checkIn")}
                 </label>
                 <input
                   type="date"
@@ -99,8 +96,8 @@ export default function Hero() {
                 />
               </div>
               <div className="flex flex-col gap-1 text-left">
-                <label className="text-white/60 text-xs uppercase tracking-wider">
-                  Çıkış
+                <label className="text-white/80 text-xs uppercase tracking-wider font-medium">
+                  {t("checkOut")}
                 </label>
                 <input
                   type="date"
@@ -108,18 +105,18 @@ export default function Hero() {
                 />
               </div>
               <div className="flex flex-col gap-1 text-left">
-                <label className="text-white/60 text-xs uppercase tracking-wider">
-                  Misafir
+                <label className="text-white/80 text-xs uppercase tracking-wider font-medium">
+                  {t("guests")}
                 </label>
                 <select className="bg-transparent border border-white/30 rounded-lg px-4 py-2.5 text-white text-sm focus:outline-none focus:border-stone-light transition-colors appearance-none w-28">
-                  <option value="1" className="text-charcoal">1 Kişi</option>
-                  <option value="2" className="text-charcoal">2 Kişi</option>
-                  <option value="3" className="text-charcoal">3 Kişi</option>
-                  <option value="4" className="text-charcoal">4 Kişi</option>
+                  <option value="1" className="text-charcoal">{t("guest1")}</option>
+                  <option value="2" className="text-charcoal">{t("guest2")}</option>
+                  <option value="3" className="text-charcoal">{t("guest3")}</option>
+                  <option value="4" className="text-charcoal">{t("guest4")}</option>
                 </select>
               </div>
               <button className="bg-stone hover:bg-stone-dark text-white px-8 py-2.5 rounded-lg text-sm tracking-[0.15em] uppercase font-medium transition-colors whitespace-nowrap">
-                Ara
+                {t("search")}
               </button>
             </div>
           </div>
@@ -146,14 +143,14 @@ export default function Hero() {
       <button
         onClick={prev}
         className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-white/30 flex items-center justify-center text-white/60 hover:text-white hover:border-white/60 transition-all"
-        aria-label="Önceki"
+        aria-label={t("prev")}
       >
         <ChevronLeft size={20} />
       </button>
       <button
         onClick={next}
         className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-white/30 flex items-center justify-center text-white/60 hover:text-white hover:border-white/60 transition-all"
-        aria-label="Sonraki"
+        aria-label={t("next")}
       >
         <ChevronRight size={20} />
       </button>

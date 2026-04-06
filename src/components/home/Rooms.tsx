@@ -1,25 +1,40 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 import { ArrowRight, Users, Maximize } from "lucide-react";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import SectionLabel from "@/components/ui/SectionLabel";
 import { rooms } from "@/lib/data";
 
 export default function Rooms() {
+  const t = useTranslations("rooms");
+  const dataT = useTranslations("data");
+  const locale = useLocale();
   const featuredRooms = rooms.filter((r) => r.featured);
+
+  const getShortDesc = (slug: string) => {
+    const keyMap: Record<string, string> = {
+      "aegean-suit": "roomAegeanShort",
+      "deluxe-apart-duplex": "roomDeluxeShort",
+      "design-apart": "roomDesignShort",
+      "acqua": "roomAcquaShort",
+      "curva": "roomCurvaShort",
+    };
+    return dataT(keyMap[slug] || "roomAegeanShort");
+  };
 
   return (
     <section className="py-24 md:py-32 bg-cream-dark/50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal className="text-center mb-16">
-          <SectionLabel text="Odalar" />
+          <SectionLabel text={t("label")} />
           <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-charcoal mt-4">
-            Daireler &amp; Suitler
+            {t("heading")}
           </h2>
           <p className="mt-4 text-warm-gray max-w-2xl mx-auto text-base md:text-lg">
-            Her biri kendine özgü tasarımı ve özel mutfağı ile 5 özel dairemizde
-            Alacati&apos;nin huzurunu yaşayın.
+            {t("description")}
           </p>
         </ScrollReveal>
 
@@ -34,7 +49,7 @@ export default function Rooms() {
                 >
                   <img
                     src={room.image}
-                    alt={room.name}
+                    alt={locale === "en" ? room.nameEn : room.name}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     loading="lazy"
                   />
@@ -50,21 +65,21 @@ export default function Rooms() {
                       </span>
                       <span className="flex items-center gap-1 text-white/70 text-xs">
                         <Users size={12} />
-                        {room.capacity} Kişi
+                        {room.capacity} {t("person")}
                       </span>
                     </div>
                     <h3 className="font-heading text-2xl md:text-3xl text-white">
-                      {room.name}
+                      {locale === "en" ? room.nameEn : room.name}
                     </h3>
                     <p className="text-white/60 text-sm mt-1">
-                      {room.shortDescription}
+                      {getShortDesc(room.slug)}
                     </p>
                     <div className="mt-4 flex items-center justify-between">
                       <span className="text-stone-light text-sm">
-                        {room.price ? `${room.price} TL / gece` : "Fiyat için arayın"}
+                        {room.price ? `${room.price} TL ${t("pricePerNight")}` : t("callForPrice")}
                       </span>
                       <span className="inline-flex items-center gap-1 text-white/60 text-xs uppercase tracking-wider group-hover:text-stone-light transition-colors">
-                        İncele
+                        {t("explore")}
                         <ArrowRight
                           size={14}
                           className="group-hover:translate-x-1 transition-transform"
@@ -83,7 +98,7 @@ export default function Rooms() {
             href="/odalar"
             className="inline-flex items-center gap-2 px-8 py-3.5 border border-stone text-stone text-sm tracking-[0.15em] uppercase font-medium hover:bg-stone hover:text-white transition-all duration-300"
           >
-            Tüm Odaları Gör
+            {t("viewAll")}
             <ArrowRight size={16} />
           </Link>
         </ScrollReveal>

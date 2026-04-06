@@ -1,20 +1,31 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
+import { usePathname, useRouter } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 import { Menu, X, Phone, Mail } from "lucide-react";
 
 const navLinks = [
-  { href: "/", label: "Ana Sayfa" },
-  { href: "/odalar", label: "Daireler" },
-  { href: "/galeri", label: "Galeri" },
-  { href: "/hakkimizda", label: "Hakkımızda" },
-  { href: "/iletisim", label: "İletişim" },
-];
+  { href: "/", labelKey: "home" },
+  { href: "/odalar", labelKey: "rooms" },
+  { href: "/galeri", labelKey: "gallery" },
+  { href: "/hakkimizda", labelKey: "about" },
+  { href: "/iletisim", labelKey: "contact" },
+] as const;
 
 export default function Header() {
+  const t = useTranslations("nav");
+  const locale = useLocale();
+  const pathname = usePathname();
+  const router = useRouter();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  const switchLocale = (newLocale: string) => {
+    router.replace(pathname, { locale: newLocale });
+  };
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -60,7 +71,12 @@ export default function Header() {
               </a>
             </div>
             <div className="flex items-center gap-3 text-[11px] tracking-wider uppercase">
-              <span className="text-stone-light">Alaçatı, Çeşme / İzmir</span>
+              <span className="text-stone-light">{t("location")}</span>
+              <div className="flex items-center gap-1.5">
+                <button onClick={() => switchLocale("tr")} className={locale === "tr" ? "text-white" : "text-white/50"}>TR</button>
+                <span className="text-white/30">|</span>
+                <button onClick={() => switchLocale("en")} className={locale === "en" ? "text-white" : "text-white/50"}>EN</button>
+              </div>
             </div>
           </div>
         </div>
@@ -110,7 +126,7 @@ export default function Header() {
                         : "text-white/80 hover:text-white after:bg-stone-light"
                     }`}
                 >
-                  {link.label}
+                  {t(link.labelKey)}
                 </Link>
               ))}
             </nav>
@@ -125,7 +141,7 @@ export default function Header() {
                     : "border-white/60 text-white hover:bg-white/10"
                 }`}
               >
-                Rezervasyon
+                {t("reservation")}
               </Link>
 
               <button
@@ -158,7 +174,7 @@ export default function Header() {
               onClick={() => setMobileOpen(false)}
               className="text-white text-2xl font-heading tracking-[0.1em] hover:text-stone-light transition-colors"
             >
-              {link.label}
+              {t(link.labelKey)}
             </Link>
           ))}
           <Link
@@ -166,8 +182,13 @@ export default function Header() {
             onClick={() => setMobileOpen(false)}
             className="mt-4 px-8 py-3 border border-stone-light text-stone-light text-sm tracking-[0.2em] uppercase hover:bg-stone-light hover:text-charcoal transition-all"
           >
-            Rezervasyon
+            {t("reservation")}
           </Link>
+          <div className="mt-4 flex items-center gap-1.5">
+            <button onClick={() => { switchLocale("tr"); setMobileOpen(false); }} className={locale === "tr" ? "text-white text-lg" : "text-white/50 text-lg"}>TR</button>
+            <span className="text-white/30">|</span>
+            <button onClick={() => { switchLocale("en"); setMobileOpen(false); }} className={locale === "en" ? "text-white text-lg" : "text-white/50 text-lg"}>EN</button>
+          </div>
           <div className="mt-8 text-warm-gray text-sm flex flex-col items-center gap-2">
             <a href="tel:+902327160000" className="hover:text-stone-light transition-colors">
               +90 232 716 00 00

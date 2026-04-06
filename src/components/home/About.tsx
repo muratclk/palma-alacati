@@ -1,11 +1,14 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import SectionLabel from "@/components/ui/SectionLabel";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { ArrowRight } from "lucide-react";
 
 export default function About() {
+  const t = useTranslations("about");
+
   return (
     <section className="py-24 md:py-32 bg-cream overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -34,7 +37,7 @@ export default function About() {
               <div className="absolute -top-4 -left-4 bg-stone text-white rounded-2xl p-5 shadow-lg">
                 <span className="font-heading text-3xl block leading-none">15+</span>
                 <span className="text-[10px] tracking-wider uppercase mt-1 block text-white/80">
-                  Yıllık Deneyim
+                  {t("yearsExperience")}
                 </span>
               </div>
             </div>
@@ -42,38 +45,33 @@ export default function About() {
 
           {/* Content */}
           <ScrollReveal direction="right">
-            <SectionLabel text="Hakkımızda" />
+            <SectionLabel text={t("label")} />
             <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-charcoal mt-4 leading-[1.15]">
-              Alacati&apos;nin Ruhunu
-              <span className="text-stone italic"> Yaşatın</span>
+              {t("heading1")}
+              <span className="text-stone italic"> {t("heading2")}</span>
             </h2>
             <p className="mt-6 text-warm-gray leading-relaxed text-base md:text-lg">
-              Palma Alacati, Hacimemis Mahallesi&apos;nde 5 özel tasarımlı
-              dairesi ile butik apart otel deneyimi sunar. Her daire kendine
-              özgü iç tasarımı, özel mutfağı ve bahçe manzarası ile
-              Ege&apos;nin huzurunu yaşatır.
+              {t("description1")}
             </p>
             <p className="mt-4 text-warm-gray leading-relaxed">
-              Koyicine ve Alacati&apos;nin en hareketli sokaklarına yürüme
-              mesafesinde bir vaha. Mevsimlik açık havuz, yeşilliklere çevrili
-              bahçe ve ücretsiz WiFi ile konforlu bir konaklama sizi bekliyor.
+              {t("description2")}
             </p>
 
             <div className="mt-8 flex flex-wrap gap-8">
               <div>
                 <span className="font-heading text-4xl text-sage">5</span>
-                <span className="block text-sm text-warm-gray mt-1">Özel Daire</span>
+                <span className="block text-sm text-warm-gray mt-1">{t("statRooms")}</span>
               </div>
               <div>
                 <span className="font-heading text-4xl text-sage">4.9</span>
                 <span className="block text-sm text-warm-gray mt-1">
-                  Google Puanı
+                  {t("statRating")}
                 </span>
               </div>
               <div>
                 <span className="font-heading text-4xl text-sage">3</span>
                 <span className="block text-sm text-warm-gray mt-1">
-                  Dil Desteği
+                  {t("statLanguages")}
                 </span>
               </div>
             </div>
@@ -82,7 +80,7 @@ export default function About() {
               href="/hakkimizda"
               className="inline-flex items-center gap-2 mt-8 text-stone text-sm tracking-[0.1em] uppercase font-medium hover:gap-4 transition-all group"
             >
-              Daha Fazlası
+              {t("moreLink")}
               <ArrowRight
                 size={16}
                 className="group-hover:translate-x-1 transition-transform"

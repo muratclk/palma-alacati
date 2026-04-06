@@ -1,18 +1,21 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { MapPin, Clock, Car, Plane } from "lucide-react";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import SectionLabel from "@/components/ui/SectionLabel";
 import { hotelInfo } from "@/lib/data";
 
 export default function Location() {
+  const t = useTranslations("location");
+
   return (
     <section className="py-24 md:py-32 bg-cream overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal className="text-center mb-16">
-          <SectionLabel text="Konum" />
+          <SectionLabel text={t("label")} />
           <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-charcoal mt-4">
-            Bize <span className="text-sage italic">Ulaşın</span>
+            {t("heading1")} <span className="text-sage italic">{t("heading2")}</span>
           </h2>
         </ScrollReveal>
 
@@ -28,7 +31,7 @@ export default function Location() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Palma Alacati konum haritası"
+                title={t("mapTitle")}
               />
             </div>
           </ScrollReveal>
@@ -42,7 +45,7 @@ export default function Location() {
                     <MapPin size={18} className="text-sage" />
                   </div>
                   <div>
-                    <h3 className="font-medium text-charcoal text-sm">Adres</h3>
+                    <h3 className="font-medium text-charcoal text-sm">{t("address")}</h3>
                     <p className="text-warm-gray text-sm mt-1">{hotelInfo.address}</p>
                   </div>
                 </div>
@@ -55,7 +58,7 @@ export default function Location() {
                   </div>
                   <div>
                     <h3 className="font-medium text-charcoal text-sm">
-                      Giriş / Çıkış
+                      {t("checkInOut")}
                     </h3>
                     <p className="text-warm-gray text-sm mt-1">
                       Check-in: {hotelInfo.checkIn} &middot; Check-out:{" "}
@@ -72,11 +75,10 @@ export default function Location() {
                   </div>
                   <div>
                     <h3 className="font-medium text-charcoal text-sm">
-                      Araçla Ulaşım
+                      {t("byCarTitle")}
                     </h3>
                     <p className="text-warm-gray text-sm mt-1">
-                      İzmir merkezden yaklaşık 1 saat (80 km). Çeşme otoyolunu
-                      kullanarak kolayca ulaşabilirsiniz.
+                      {t("byCarDesc")}
                     </p>
                   </div>
                 </div>
@@ -89,11 +91,10 @@ export default function Location() {
                   </div>
                   <div>
                     <h3 className="font-medium text-charcoal text-sm">
-                      Havayolu ile
+                      {t("byAirTitle")}
                     </h3>
                     <p className="text-warm-gray text-sm mt-1">
-                      İzmir Adnan Menderes Havalimani&apos;ndan yaklaşık 80 km.
-                      Transfer hizmeti mevcuttur.
+                      {t("byAirDesc")}
                     </p>
                   </div>
                 </div>

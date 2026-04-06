@@ -7,12 +7,12 @@ import { galleryImages } from "@/lib/data";
 import { X } from "lucide-react";
 
 const categories = [
-  { key: "tumu", label: "Tümü" },
+  { key: "tumu", label: "Tumu" },
   { key: "otel", label: "Otel" },
   { key: "odalar", label: "Odalar" },
   { key: "restoran", label: "Restoran" },
   { key: "spa", label: "SPA" },
-  { key: "cevre", label: "Çevre" },
+  { key: "cevre", label: "Cevre" },
 ];
 
 export default function GalleryPage() {
@@ -37,7 +37,7 @@ export default function GalleryPage() {
           <div className="absolute inset-0 bg-charcoal/50" />
         </div>
         <div className="relative text-center px-4">
-          <SectionLabel text="Fotoğraf" className="[&]:text-stone-light [&::before]:bg-stone/50 [&::after]:bg-stone/50" />
+          <SectionLabel text="Fotograf" className="[&]:text-stone-light [&::before]:bg-stone/50 [&::after]:bg-stone/50" />
           <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl text-white mt-4">
             Galeri
           </h1>
