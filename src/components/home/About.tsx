@@ -34,7 +34,7 @@ export default function About() {
               <div className="absolute -top-4 -left-4 bg-stone text-white rounded-2xl p-5 shadow-lg">
                 <span className="font-heading text-3xl block leading-none">15+</span>
                 <span className="text-[10px] tracking-wider uppercase mt-1 block text-white/80">
-                  Yillik Deneyim
+                  Yıllık Deneyim
                 </span>
               </div>
             </div>
@@ -42,38 +42,38 @@ export default function About() {
 
           {/* Content */}
           <ScrollReveal direction="right">
-            <SectionLabel text="Hakkimizda" />
+            <SectionLabel text="Hakkımızda" />
             <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-charcoal mt-4 leading-[1.15]">
               Alacati&apos;nin Ruhunu
-              <span className="text-stone italic"> Yasatin</span>
+              <span className="text-stone italic"> Yaşatın</span>
             </h2>
             <p className="mt-6 text-warm-gray leading-relaxed text-base md:text-lg">
-              Palma Alacati, Hacimemis Mahallesi&apos;nde 5 ozel tasarimli
+              Palma Alacati, Hacimemis Mahallesi&apos;nde 5 özel tasarımlı
               dairesi ile butik apart otel deneyimi sunar. Her daire kendine
-              ozgu ic tasarimi, ozel mutfagi ve bahce manzarasi ile
-              Ege&apos;nin huzurunu yasatir.
+              özgü iç tasarımı, özel mutfağı ve bahçe manzarası ile
+              Ege&apos;nin huzurunu yaşatır.
             </p>
             <p className="mt-4 text-warm-gray leading-relaxed">
-              Koyicine ve Alacati&apos;nin en hareketli sokaklarina yurume
-              mesafesinde bir vaha. Mevsimlik acik havuz, yesilliklere cevrili
-              bahce ve ucretsiz WiFi ile konforlu bir konaklama sizi bekliyor.
+              Koyicine ve Alacati&apos;nin en hareketli sokaklarına yürüme
+              mesafesinde bir vaha. Mevsimlik açık havuz, yeşilliklere çevrili
+              bahçe ve ücretsiz WiFi ile konforlu bir konaklama sizi bekliyor.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-8">
               <div>
                 <span className="font-heading text-4xl text-sage">5</span>
-                <span className="block text-sm text-warm-gray mt-1">Ozel Daire</span>
+                <span className="block text-sm text-warm-gray mt-1">Özel Daire</span>
               </div>
               <div>
                 <span className="font-heading text-4xl text-sage">4.9</span>
                 <span className="block text-sm text-warm-gray mt-1">
-                  Google Puani
+                  Google Puanı
                 </span>
               </div>
               <div>
                 <span className="font-heading text-4xl text-sage">3</span>
                 <span className="block text-sm text-warm-gray mt-1">
-                  Dil Destegi
+                  Dil Desteği
                 </span>
               </div>
             </div>
@@ -82,7 +82,7 @@ export default function About() {
               href="/hakkimizda"
               className="inline-flex items-center gap-2 mt-8 text-stone text-sm tracking-[0.1em] uppercase font-medium hover:gap-4 transition-all group"
             >
-              Daha Fazlasi
+              Daha Fazlası
               <ArrowRight
                 size={16}
                 className="group-hover:translate-x-1 transition-transform"

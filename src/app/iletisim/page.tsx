@@ -4,16 +4,16 @@ import { faqItems } from "@/lib/data";
 import { generateBreadcrumbJsonLd, generateFAQJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Iletisim & Rezervasyon",
+  title: "İletişim & Rezervasyon",
   description:
-    "Palma Alacati iletisim bilgileri ve rezervasyon. Telefon, e-posta, adres ve ulasim bilgileri. Alacati, Cesme/Izmir.",
+    "Palma Alaçatı iletişim bilgileri ve rezervasyon. Telefon, e-posta, adres ve ulaşım bilgileri. Alaçatı, Çeşme/İzmir.",
   alternates: { canonical: "https://palmaalacati.com/iletisim" },
 };
 
 export default function ContactPage() {
   const breadcrumbJsonLd = generateBreadcrumbJsonLd([
     { name: "Ana Sayfa", url: "https://palmaalacati.com" },
-    { name: "Iletisim", url: "https://palmaalacati.com/iletisim" },
+    { name: "İletişim", url: "https://palmaalacati.com/iletisim" },
   ]);
   const faqJsonLd = generateFAQJsonLd(faqItems);
 

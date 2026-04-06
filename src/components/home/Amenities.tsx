@@ -36,10 +36,10 @@ export default function Amenities() {
               <SectionLabel text="Hizmetler" />
               <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-charcoal mt-4 leading-[1.15]">
                 Otel{" "}
-                <span className="text-sage italic">Olanaklari</span>
+                <span className="text-sage italic">Olanakları</span>
               </h2>
               <p className="mt-4 text-warm-gray text-base md:text-lg">
-                Konaklamanizi eksiksiz bir deneyime donusturecek
+                Konaklamanızı eksiksiz bir deneyime dönüştürecek
                 hizmetlerimiz.
               </p>
             </ScrollReveal>

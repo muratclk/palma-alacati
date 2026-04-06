@@ -82,7 +82,7 @@ export default async function RoomDetailPage({
             className="inline-flex items-center gap-2 text-white/60 text-sm hover:text-white transition-colors mb-4"
           >
             <ArrowLeft size={14} />
-            Tum Odalar
+            Tüm Odalar
           </Link>
           <h1 className="font-heading text-5xl md:text-6xl text-white">
             {room.name}
@@ -94,7 +94,7 @@ export default async function RoomDetailPage({
             </span>
             <span className="flex items-center gap-1.5">
               <Users size={14} />
-              {room.capacity} Kisi
+              {room.capacity} Kişi
             </span>
             <span className="flex items-center gap-1.5">
               <Eye size={14} />
@@ -116,7 +116,7 @@ export default async function RoomDetailPage({
             <div className="lg:col-span-2">
               <ScrollReveal>
                 <h2 className="font-heading text-3xl text-charcoal">
-                  Oda Hakkinda
+                  Oda Hakkında
                 </h2>
                 <p className="mt-4 text-warm-gray leading-relaxed text-lg">
                   {room.description}
@@ -164,7 +164,7 @@ export default async function RoomDetailPage({
                       </>
                     ) : (
                       <span className="font-heading text-2xl text-stone">
-                        Fiyat Icin Arayin
+                        Fiyat İçin Arayın
                       </span>
                     )}
                   </div>
@@ -180,7 +180,7 @@ export default async function RoomDetailPage({
                     <div className="flex items-center justify-between text-sm">
                       <span className="text-warm-gray">Kapasite</span>
                       <span className="text-charcoal font-medium">
-                        {room.capacity} Kisi
+                        {room.capacity} Kişi
                       </span>
                     </div>
                     <div className="flex items-center justify-between text-sm">
@@ -208,7 +208,7 @@ export default async function RoomDetailPage({
                   {/* Amenities */}
                   <div className="mt-6 pt-6 border-t border-border">
                     <h4 className="text-sm font-medium text-charcoal mb-3">
-                      Oda Olanaklari
+                      Oda Olanakları
                     </h4>
                     <div className="space-y-2">
                       {room.amenities.map((a) => (
@@ -233,9 +233,9 @@ export default async function RoomDetailPage({
       <section className="py-16 md:py-24 bg-cream-dark/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal className="text-center mb-12">
-            <SectionLabel text="Diger Odalar" />
+            <SectionLabel text="Diğer Odalar" />
             <h2 className="font-heading text-3xl md:text-4xl text-charcoal mt-4">
-              Diger Odalarimiz
+              Diğer Odalarımız
             </h2>
           </ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

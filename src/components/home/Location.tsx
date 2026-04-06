@@ -12,7 +12,7 @@ export default function Location() {
         <ScrollReveal className="text-center mb-16">
           <SectionLabel text="Konum" />
           <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-charcoal mt-4">
-            Bize <span className="text-sage italic">Ulasin</span>
+            Bize <span className="text-sage italic">Ulaşın</span>
           </h2>
         </ScrollReveal>
 
@@ -28,7 +28,7 @@ export default function Location() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Palma Alacati konum haritasi"
+                title="Palma Alacati konum haritası"
               />
             </div>
           </ScrollReveal>
@@ -55,7 +55,7 @@ export default function Location() {
                   </div>
                   <div>
                     <h3 className="font-medium text-charcoal text-sm">
-                      Giris / Cikis
+                      Giriş / Çıkış
                     </h3>
                     <p className="text-warm-gray text-sm mt-1">
                       Check-in: {hotelInfo.checkIn} &middot; Check-out:{" "}
@@ -72,11 +72,11 @@ export default function Location() {
                   </div>
                   <div>
                     <h3 className="font-medium text-charcoal text-sm">
-                      Aracla Ulasim
+                      Araçla Ulaşım
                     </h3>
                     <p className="text-warm-gray text-sm mt-1">
-                      Izmir merkezden yaklasik 1 saat (80 km). Cesme otoyolunu
-                      kullanarak kolayca ulasabilirsiniz.
+                      İzmir merkezden yaklaşık 1 saat (80 km). Çeşme otoyolunu
+                      kullanarak kolayca ulaşabilirsiniz.
                     </p>
                   </div>
                 </div>
@@ -92,7 +92,7 @@ export default function Location() {
                       Havayolu ile
                     </h3>
                     <p className="text-warm-gray text-sm mt-1">
-                      Izmir Adnan Menderes Havalimani&apos;ndan yaklasik 80 km.
+                      İzmir Adnan Menderes Havalimani&apos;ndan yaklaşık 80 km.
                       Transfer hizmeti mevcuttur.
                     </p>
                   </div>

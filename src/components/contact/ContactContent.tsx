@@ -19,9 +19,9 @@ export default function ContactContent() {
           <div className="absolute inset-0 bg-charcoal/50" />
         </div>
         <div className="relative text-center px-4">
-          <SectionLabel text="Bize Ulasin" className="[&]:text-stone-light [&::before]:bg-stone/50 [&::after]:bg-stone/50" />
+          <SectionLabel text="Bize Ulaşın" className="[&]:text-stone-light [&::before]:bg-stone/50 [&::after]:bg-stone/50" />
           <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl text-white mt-4">
-            Iletisim
+            İletişim
           </h1>
         </div>
       </section>
@@ -35,7 +35,7 @@ export default function ContactContent() {
               { icon: Phone, title: "Telefon", value: hotelInfo.phone, href: `tel:${hotelInfo.phone}` },
               { icon: Mail, title: "E-posta", value: hotelInfo.email, href: `mailto:${hotelInfo.email}` },
               { icon: MapPin, title: "Adres", value: hotelInfo.address, href: "#map" },
-              { icon: Clock, title: "Giris / Cikis", value: `Check-in: ${hotelInfo.checkIn} / Check-out: ${hotelInfo.checkOut}`, href: undefined },
+              { icon: Clock, title: "Giriş / Çıkış", value: `Check-in: ${hotelInfo.checkIn} / Check-out: ${hotelInfo.checkOut}`, href: undefined },
             ].map((card) => (
               <ScrollReveal key={card.title}>
                 <div className="bg-white rounded-2xl p-8 shadow-sm border border-border text-center h-full hover:shadow-md transition-shadow">
@@ -64,7 +64,7 @@ export default function ContactContent() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
                     <label className="block text-sm text-charcoal mb-1.5">Ad Soyad</label>
-                    <input type="text" className="w-full px-4 py-3 bg-white border border-border rounded-lg text-sm focus:outline-none focus:border-sage transition-colors" placeholder="Adiniz Soyadiniz" />
+                    <input type="text" className="w-full px-4 py-3 bg-white border border-border rounded-lg text-sm focus:outline-none focus:border-sage transition-colors" placeholder="Adınız Soyadınız" />
                   </div>
                   <div>
                     <label className="block text-sm text-charcoal mb-1.5">Telefon</label>
@@ -77,18 +77,18 @@ export default function ContactContent() {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-sm text-charcoal mb-1.5">Giris Tarihi</label>
+                    <label className="block text-sm text-charcoal mb-1.5">Giriş Tarihi</label>
                     <input type="date" className="w-full px-4 py-3 bg-white border border-border rounded-lg text-sm focus:outline-none focus:border-sage transition-colors" />
                   </div>
                   <div>
-                    <label className="block text-sm text-charcoal mb-1.5">Cikis Tarihi</label>
+                    <label className="block text-sm text-charcoal mb-1.5">Çıkış Tarihi</label>
                     <input type="date" className="w-full px-4 py-3 bg-white border border-border rounded-lg text-sm focus:outline-none focus:border-sage transition-colors" />
                   </div>
                 </div>
                 <div>
                   <label className="block text-sm text-charcoal mb-1.5">Oda Tercihi</label>
                   <select className="w-full px-4 py-3 bg-white border border-border rounded-lg text-sm focus:outline-none focus:border-sage transition-colors appearance-none">
-                    <option value="">Daire Seciniz</option>
+                    <option value="">Daire Seçiniz</option>
                     <option value="aegean-suit">Aegean Suit</option>
                     <option value="deluxe-apart-duplex">Deluxe Apart Duplex</option>
                     <option value="design-apart">Design Apart Daire</option>
@@ -97,11 +97,11 @@ export default function ContactContent() {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-sm text-charcoal mb-1.5">Mesajiniz</label>
-                  <textarea rows={4} className="w-full px-4 py-3 bg-white border border-border rounded-lg text-sm focus:outline-none focus:border-sage transition-colors resize-none" placeholder="Ozel istekleriniz varsa belirtiniz..." />
+                  <label className="block text-sm text-charcoal mb-1.5">Mesajınız</label>
+                  <textarea rows={4} className="w-full px-4 py-3 bg-white border border-border rounded-lg text-sm focus:outline-none focus:border-sage transition-colors resize-none" placeholder="Özel istekleriniz varsa belirtiniz..." />
                 </div>
                 <button type="submit" className="w-full py-3.5 bg-stone text-white text-sm tracking-[0.15em] uppercase font-medium hover:bg-stone-dark transition-colors rounded-lg">
-                  Rezervasyon Talebi Gonder
+                  Rezervasyon Talebi Gönder
                 </button>
               </form>
             </ScrollReveal>
@@ -152,11 +152,11 @@ export default function ContactContent() {
       {/* WhatsApp CTA */}
       <section className="py-16 bg-sage text-center">
         <div className="max-w-2xl mx-auto px-4">
-          <h2 className="font-heading text-3xl text-white">Hizli Iletisim</h2>
-          <p className="text-white/70 mt-2">WhatsApp uzerinden aninda cevap alin</p>
+          <h2 className="font-heading text-3xl text-white">Hızlı İletişim</h2>
+          <p className="text-white/70 mt-2">WhatsApp üzerinden anında cevap alın</p>
           <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href={`https://wa.me/${hotelInfo.whatsapp.replace(/[^0-9]/g, "")}`} target="_blank" rel="noopener noreferrer" className="px-8 py-3 bg-white text-sage text-sm tracking-[0.15em] uppercase font-medium rounded-lg hover:bg-cream transition-colors">
-              WhatsApp ile Yazin
+              WhatsApp ile Yazın
             </a>
             <a href={`https://instagram.com/${hotelInfo.instagram}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-8 py-3 border border-white/40 text-white text-sm tracking-[0.15em] uppercase font-medium rounded-lg hover:bg-white/10 transition-colors">
               <Camera size={16} />

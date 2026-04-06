@@ -9,7 +9,7 @@ import { generateBreadcrumbJsonLd } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "Odalar & Suitler",
   description:
-    "Palma Alacati'nin 5 ozel tasarimli dairesi. Aegean Suit, Deluxe Apart Duplex, Design Apart, Acqua ve Curva. Her biri ozel mutfakli, Alacati'nin en ozel butik apart oteli.",
+    "Palma Alacati'nin 5 özel tasarımlı dairesi. Aegean Suit, Deluxe Apart Duplex, Design Apart, Acqua ve Curva. Her biri özel mutfaklı, Alaçatı'nın en özel butik apart oteli.",
   alternates: { canonical: "https://palmaalacati.com/odalar" },
 };
 
@@ -42,7 +42,7 @@ export default function RoomsPage() {
             Daireler &amp; Suitler
           </h1>
           <p className="text-white/70 mt-4 text-lg max-w-xl mx-auto">
-            Her biri kendine ozgu tasarimi ve ozel mutfagi ile 5 ozel daire
+            Her biri kendine özgü tasarımı ve özel mutfağı ile 5 özel daire
           </p>
         </div>
       </section>
@@ -81,7 +81,7 @@ export default function RoomsPage() {
                       </span>
                       <span className="flex items-center gap-1.5">
                         <Users size={14} />
-                        {room.capacity} Kisi
+                        {room.capacity} Kişi
                       </span>
                     </div>
                     <h2 className="font-heading text-3xl md:text-4xl text-charcoal">
@@ -109,7 +109,7 @@ export default function RoomsPage() {
                       <span className="font-heading text-2xl text-stone">
                         {room.price
                           ? `${room.price} TL`
-                          : "Fiyat Icin Arayin"}
+                          : "Fiyat İçin Arayın"}
                         {room.price && (
                           <span className="text-warm-gray text-sm font-sans">
                             {" "}/ gece

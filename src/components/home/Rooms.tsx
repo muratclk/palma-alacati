@@ -18,8 +18,8 @@ export default function Rooms() {
             Daireler &amp; Suitler
           </h2>
           <p className="mt-4 text-warm-gray max-w-2xl mx-auto text-base md:text-lg">
-            Her biri kendine ozgu tasarimi ve ozel mutfagi ile 5 ozel dairemizde
-            Alacati&apos;nin huzurunu yasayin.
+            Her biri kendine özgü tasarımı ve özel mutfağı ile 5 özel dairemizde
+            Alacati&apos;nin huzurunu yaşayın.
           </p>
         </ScrollReveal>
 
@@ -50,7 +50,7 @@ export default function Rooms() {
                       </span>
                       <span className="flex items-center gap-1 text-white/70 text-xs">
                         <Users size={12} />
-                        {room.capacity} Kisi
+                        {room.capacity} Kişi
                       </span>
                     </div>
                     <h3 className="font-heading text-2xl md:text-3xl text-white">
@@ -61,10 +61,10 @@ export default function Rooms() {
                     </p>
                     <div className="mt-4 flex items-center justify-between">
                       <span className="text-stone-light text-sm">
-                        {room.price ? `${room.price} TL / gece` : "Fiyat icin arayin"}
+                        {room.price ? `${room.price} TL / gece` : "Fiyat için arayın"}
                       </span>
                       <span className="inline-flex items-center gap-1 text-white/60 text-xs uppercase tracking-wider group-hover:text-stone-light transition-colors">
-                        Incele
+                        İncele
                         <ArrowRight
                           size={14}
                           className="group-hover:translate-x-1 transition-transform"
@@ -83,7 +83,7 @@ export default function Rooms() {
             href="/odalar"
             className="inline-flex items-center gap-2 px-8 py-3.5 border border-stone text-stone text-sm tracking-[0.15em] uppercase font-medium hover:bg-stone hover:text-white transition-all duration-300"
           >
-            Tum Odalari Gor
+            Tüm Odaları Gör
             <ArrowRight size={16} />
           </Link>
         </ScrollReveal>

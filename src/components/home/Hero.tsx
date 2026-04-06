@@ -7,12 +7,12 @@ const slides = [
   {
     image: "/images/hotel/325f6644.jpg",
     title: "Ege'nin Kalbinde\nZarafet",
-    subtitle: "Alacati'nin en ozel butik otel deneyimi",
+    subtitle: "Alaçatı'nın en özel butik otel deneyimi",
   },
   {
     image: "/images/hotel/6a4c7b08.jpg",
     title: "Huzur Dolu\nAnlar",
-    subtitle: "Zeytin agaclari arasinda unutulmaz bir tatil",
+    subtitle: "Zeytin ağaçları arasında unutulmaz bir tatil",
   },
   {
     image: "/images/hotel/9ac599d1.jpg",
@@ -91,7 +91,7 @@ export default function Hero() {
             <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 md:p-6 inline-flex flex-col md:flex-row items-end gap-4">
               <div className="flex flex-col gap-1 text-left">
                 <label className="text-white/60 text-xs uppercase tracking-wider">
-                  Giris
+                  Giriş
                 </label>
                 <input
                   type="date"
@@ -100,7 +100,7 @@ export default function Hero() {
               </div>
               <div className="flex flex-col gap-1 text-left">
                 <label className="text-white/60 text-xs uppercase tracking-wider">
-                  Cikis
+                  Çıkış
                 </label>
                 <input
                   type="date"
@@ -112,10 +112,10 @@ export default function Hero() {
                   Misafir
                 </label>
                 <select className="bg-transparent border border-white/30 rounded-lg px-4 py-2.5 text-white text-sm focus:outline-none focus:border-stone-light transition-colors appearance-none w-28">
-                  <option value="1" className="text-charcoal">1 Kisi</option>
-                  <option value="2" className="text-charcoal">2 Kisi</option>
-                  <option value="3" className="text-charcoal">3 Kisi</option>
-                  <option value="4" className="text-charcoal">4 Kisi</option>
+                  <option value="1" className="text-charcoal">1 Kişi</option>
+                  <option value="2" className="text-charcoal">2 Kişi</option>
+                  <option value="3" className="text-charcoal">3 Kişi</option>
+                  <option value="4" className="text-charcoal">4 Kişi</option>
                 </select>
               </div>
               <button className="bg-stone hover:bg-stone-dark text-white px-8 py-2.5 rounded-lg text-sm tracking-[0.15em] uppercase font-medium transition-colors whitespace-nowrap">
@@ -146,7 +146,7 @@ export default function Hero() {
       <button
         onClick={prev}
         className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-white/30 flex items-center justify-center text-white/60 hover:text-white hover:border-white/60 transition-all"
-        aria-label="Onceki"
+        aria-label="Önceki"
       >
         <ChevronLeft size={20} />
       </button>

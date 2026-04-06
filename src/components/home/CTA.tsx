@@ -27,7 +27,7 @@ export default function CTA() {
             <span className="text-stone-light italic">Sizi Bekliyor</span>
           </h2>
           <p className="mt-6 text-white/70 text-lg max-w-xl mx-auto">
-            Alacati&apos;nin buyuleyici atmosferinde, size ozel bir deneyim icin
+            Alacati&apos;nin büyüleyici atmosferinde, size özel bir deneyim için
             hemen rezervasyon yapin.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -41,7 +41,7 @@ export default function CTA() {
               href="/odalar"
               className="px-10 py-4 border border-white/40 text-white text-sm tracking-[0.2em] uppercase font-medium hover:bg-white/10 transition-colors"
             >
-              Odalari Incele
+              Odaları İncele
             </Link>
           </div>
         </ScrollReveal>

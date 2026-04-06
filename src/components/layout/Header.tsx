@@ -8,8 +8,8 @@ const navLinks = [
   { href: "/", label: "Ana Sayfa" },
   { href: "/odalar", label: "Daireler" },
   { href: "/galeri", label: "Galeri" },
-  { href: "/hakkimizda", label: "Hakkimizda" },
-  { href: "/iletisim", label: "Iletisim" },
+  { href: "/hakkimizda", label: "Hakkımızda" },
+  { href: "/iletisim", label: "İletişim" },
 ];
 
 export default function Header() {
@@ -60,7 +60,7 @@ export default function Header() {
               </a>
             </div>
             <div className="flex items-center gap-3 text-[11px] tracking-wider uppercase">
-              <span className="text-stone-light">Alacati, Cesme / Izmir</span>
+              <span className="text-stone-light">Alaçatı, Çeşme / İzmir</span>
             </div>
           </div>
         </div>

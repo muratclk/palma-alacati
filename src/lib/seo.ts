@@ -13,8 +13,8 @@ export function generateHotelJsonLd() {
     address: {
       "@type": "PostalAddress",
       streetAddress: "2055. Sokak No:4, Hacimemis Mahallesi",
-      addressLocality: "Alacati, Cesme",
-      addressRegion: "Izmir",
+      addressLocality: "Alaçatı, Çeşme",
+      addressRegion: "İzmir",
       postalCode: "35930",
       addressCountry: "TR",
     },
@@ -41,12 +41,12 @@ export function generateHotelJsonLd() {
       { "@type": "Language", name: "Italian" },
     ],
     amenityFeature: [
-      { "@type": "LocationFeatureSpecification", name: "Mevsimlik Acik Havuz", value: true },
-      { "@type": "LocationFeatureSpecification", name: "Ucretsiz WiFi", value: true },
-      { "@type": "LocationFeatureSpecification", name: "Ucretsiz Otopark", value: true },
+      { "@type": "LocationFeatureSpecification", name: "Mevsimlik Açık Havuz", value: true },
+      { "@type": "LocationFeatureSpecification", name: "Ücretsiz WiFi", value: true },
+      { "@type": "LocationFeatureSpecification", name: "Ücretsiz Otopark", value: true },
       { "@type": "LocationFeatureSpecification", name: "Klima", value: true },
-      { "@type": "LocationFeatureSpecification", name: "Ozel Mutfak", value: true },
-      { "@type": "LocationFeatureSpecification", name: "Bahce", value: true },
+      { "@type": "LocationFeatureSpecification", name: "Özel Mutfak", value: true },
+      { "@type": "LocationFeatureSpecification", name: "Bahçe", value: true },
     ],
     containsPlace: rooms.map((room) => ({
       "@type": "HotelRoom",

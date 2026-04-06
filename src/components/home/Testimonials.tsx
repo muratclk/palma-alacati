@@ -82,7 +82,7 @@ export default function Testimonials() {
             <button
               onClick={prev}
               className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white/60 hover:text-white hover:border-white/60 transition-all"
-              aria-label="Onceki yorum"
+              aria-label="Önceki yorum"
             >
               <ChevronLeft size={18} />
             </button>

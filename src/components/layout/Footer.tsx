@@ -8,15 +8,15 @@ const footerLinks = {
   kesfet: [
     { href: "/odalar", label: "Daireler & Suitler" },
     { href: "/galeri", label: "Galeri" },
-    { href: "/hakkimizda", label: "Hakkimizda" },
-    { href: "/iletisim", label: "Iletisim" },
+    { href: "/hakkimizda", label: "Hakkımızda" },
+    { href: "/iletisim", label: "İletişim" },
   ],
   hizmetler: [
     { href: "/odalar", label: "Konaklama" },
-    { href: "/#amenities", label: "Ozel Mutfak" },
+    { href: "/#amenities", label: "Özel Mutfak" },
     { href: "/#amenities", label: "Mevsimlik Havuz" },
-    { href: "/#amenities", label: "Ucretsiz WiFi" },
-    { href: "/#amenities", label: "Ucretsiz Otopark" },
+    { href: "/#amenities", label: "Ücretsiz WiFi" },
+    { href: "/#amenities", label: "Ücretsiz Otopark" },
   ],
 };
 
@@ -33,10 +33,10 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div>
               <h3 className="font-heading text-2xl md:text-3xl text-white tracking-wide">
-                Ozel Firsatlardan Haberdar Olun
+                Özel Fırsatlardan Haberdar Olun
               </h3>
               <p className="mt-2 text-warm-gray text-sm">
-                Kampanyalar ve ozel teklifler icin bultenimize abone olun.
+                Kampanyalar ve özel teklifler için bültenimize abone olun.
               </p>
             </div>
             <form className="flex w-full md:w-auto gap-0" onSubmit={(e) => e.preventDefault()}>
@@ -89,7 +89,7 @@ export default function Footer() {
           {/* Links - Kesfet */}
           <div>
             <h4 className="text-white text-sm tracking-[0.15em] uppercase font-medium mb-6">
-              Kesfet
+              Keşfet
             </h4>
             <ul className="space-y-3">
               {footerLinks.kesfet.map((link) => (
@@ -127,7 +127,7 @@ export default function Footer() {
           {/* Contact info */}
           <div>
             <h4 className="text-white text-sm tracking-[0.15em] uppercase font-medium mb-6">
-              Iletisim
+              İletişim
             </h4>
             <ul className="space-y-4">
               <li>
@@ -161,12 +161,12 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex items-center justify-between">
           <p className="text-xs text-warm-gray">
-            &copy; {new Date().getFullYear()} Palma Alacati. Tum haklari saklidir.
+            &copy; {new Date().getFullYear()} Palma Alacati. Tüm hakları saklıdır.
           </p>
           <button
             onClick={scrollToTop}
             className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-stone hover:text-stone transition-all"
-            aria-label="Sayfa basi"
+            aria-label="Sayfa başı"
           >
             <ArrowUp size={16} />
           </button>
