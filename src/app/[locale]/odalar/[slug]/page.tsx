@@ -210,7 +210,7 @@ export default async function RoomDetailPage({
                     href={`https://wa.me/${hotelInfo.whatsapp.replace(/[^0-9]/g, "")}?text=${encodeURIComponent(`Merhaba, ${room.name} odası için rezervasyon yapmak istiyorum.`)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 w-full py-3.5 bg-[#25D366] hover:bg-[#1da851] text-white text-sm tracking-[0.15em] uppercase font-medium transition-colors rounded-lg"
+                    className="flex items-center justify-center gap-2 w-full py-3.5 bg-stone hover:bg-stone-dark text-white text-sm tracking-[0.15em] uppercase font-medium transition-colors rounded-lg"
                   >
                     <MessageCircle size={16} />
                     Rezervasyon Yap

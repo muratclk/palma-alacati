@@ -39,7 +39,7 @@ export default function CTA() {
               href={`https://wa.me/${hotelInfo.whatsapp.replace(/[^0-9]/g, "")}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-10 py-4 bg-[#25D366] hover:bg-[#1da851] text-white text-sm tracking-[0.2em] uppercase font-medium transition-colors"
+              className="inline-flex items-center gap-3 px-10 py-4 bg-stone hover:bg-stone-dark text-white text-sm tracking-[0.2em] uppercase font-medium transition-colors"
             >
               <MessageCircle size={18} />
               {t("bookNow")}

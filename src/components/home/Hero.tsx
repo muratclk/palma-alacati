@@ -90,9 +90,8 @@ export default function Hero() {
               href={`https://wa.me/${hotelInfo.whatsapp.replace(/[^0-9]/g, "")}?text=${encodeURIComponent(t("whatsappMessage"))}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-10 py-4 bg-[#25D366] hover:bg-[#1da851] text-white text-sm tracking-[0.15em] uppercase font-medium transition-all rounded-lg shadow-2xl"
+              className="inline-flex items-center gap-3 px-10 py-4 bg-stone hover:bg-stone-dark text-white text-sm tracking-[0.15em] uppercase font-medium transition-all rounded-lg shadow-2xl"
             >
-              <MessageCircle size={20} />
               {t("whatsappCta")}
             </a>
           </div>
