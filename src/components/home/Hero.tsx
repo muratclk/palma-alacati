@@ -2,7 +2,8 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { useTranslations } from "next-intl";
-import { ChevronLeft, ChevronRight, ChevronDown } from "lucide-react";
+import { ChevronLeft, ChevronRight, ChevronDown, MessageCircle } from "lucide-react";
+import { hotelInfo } from "@/lib/data";
 
 const slideImages = [
   "/images/hotel/325f6644.jpg",
@@ -83,42 +84,17 @@ export default function Hero() {
             </p>
           </div>
 
-          {/* Booking widget */}
-          <div className="mt-10 animate-[fadeInUp_0.8s_ease-out_0.4s_both]">
-            <div className="bg-black/30 backdrop-blur-xl border border-white/15 rounded-xl p-4 md:p-6 inline-flex flex-col md:flex-row items-end gap-4 shadow-2xl">
-              <div className="flex flex-col gap-1 text-left">
-                <label className="text-white/80 text-xs uppercase tracking-wider font-medium">
-                  {t("checkIn")}
-                </label>
-                <input
-                  type="date"
-                  className="bg-transparent border border-white/30 rounded-lg px-4 py-2.5 text-white text-sm focus:outline-none focus:border-stone-light transition-colors w-40"
-                />
-              </div>
-              <div className="flex flex-col gap-1 text-left">
-                <label className="text-white/80 text-xs uppercase tracking-wider font-medium">
-                  {t("checkOut")}
-                </label>
-                <input
-                  type="date"
-                  className="bg-transparent border border-white/30 rounded-lg px-4 py-2.5 text-white text-sm focus:outline-none focus:border-stone-light transition-colors w-40"
-                />
-              </div>
-              <div className="flex flex-col gap-1 text-left">
-                <label className="text-white/80 text-xs uppercase tracking-wider font-medium">
-                  {t("guests")}
-                </label>
-                <select className="bg-transparent border border-white/30 rounded-lg px-4 py-2.5 text-white text-sm focus:outline-none focus:border-stone-light transition-colors appearance-none w-28">
-                  <option value="1" className="text-charcoal">{t("guest1")}</option>
-                  <option value="2" className="text-charcoal">{t("guest2")}</option>
-                  <option value="3" className="text-charcoal">{t("guest3")}</option>
-                  <option value="4" className="text-charcoal">{t("guest4")}</option>
-                </select>
-              </div>
-              <button className="bg-stone hover:bg-stone-dark text-white px-8 py-2.5 rounded-lg text-sm tracking-[0.15em] uppercase font-medium transition-colors whitespace-nowrap">
-                {t("search")}
-              </button>
-            </div>
+          {/* WhatsApp CTA */}
+          <div className="mt-10 animate-[fadeInUp_0.8s_ease-out_0.4s_both] flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a
+              href={`https://wa.me/${hotelInfo.whatsapp.replace(/[^0-9]/g, "")}?text=${encodeURIComponent(t("whatsappMessage"))}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-10 py-4 bg-[#25D366] hover:bg-[#1da851] text-white text-sm tracking-[0.15em] uppercase font-medium transition-all rounded-lg shadow-2xl"
+            >
+              <MessageCircle size={20} />
+              {t("whatsappCta")}
+            </a>
           </div>
         </div>
       </div>

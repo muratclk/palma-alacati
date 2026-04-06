@@ -7,13 +7,13 @@ import {
   BedDouble,
   Check,
   ArrowLeft,
-  Phone,
+  MessageCircle,
 } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import SectionLabel from "@/components/ui/SectionLabel";
-import { rooms } from "@/lib/data";
+import { rooms, hotelInfo } from "@/lib/data";
 import { generateRoomJsonLd, generateBreadcrumbJsonLd } from "@/lib/seo";
 
 export async function generateStaticParams() {
@@ -207,10 +207,12 @@ export default async function RoomDetailPage({
                   </div>
 
                   <a
-                    href="tel:+902327160000"
-                    className="flex items-center justify-center gap-2 w-full py-3.5 bg-stone text-white text-sm tracking-[0.15em] uppercase font-medium hover:bg-stone-dark transition-colors rounded-lg"
+                    href={`https://wa.me/${hotelInfo.whatsapp.replace(/[^0-9]/g, "")}?text=${encodeURIComponent(`Merhaba, ${room.name} odası için rezervasyon yapmak istiyorum.`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 w-full py-3.5 bg-[#25D366] hover:bg-[#1da851] text-white text-sm tracking-[0.15em] uppercase font-medium transition-colors rounded-lg"
                   >
-                    <Phone size={16} />
+                    <MessageCircle size={16} />
                     Rezervasyon Yap
                   </a>
 

@@ -5,7 +5,8 @@ import { Link } from "@/i18n/navigation";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { useLocale } from "next-intl";
-import { Menu, X, Phone, Mail } from "lucide-react";
+import { Menu, X, Phone, Mail, MessageCircle } from "lucide-react";
+import { hotelInfo } from "@/lib/data";
 
 const navLinks = [
   { href: "/", labelKey: "home" },
@@ -133,16 +134,19 @@ export default function Header() {
 
             {/* Reservation button + mobile toggle */}
             <div className="flex items-center gap-4">
-              <Link
-                href="/iletisim"
-                className={`hidden md:inline-flex items-center px-6 py-2.5 text-xs tracking-[0.2em] uppercase font-medium border transition-all duration-300 ${
+              <a
+                href={`https://wa.me/${hotelInfo.whatsapp.replace(/[^0-9]/g, "")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`hidden md:inline-flex items-center gap-2 px-6 py-2.5 text-xs tracking-[0.2em] uppercase font-medium border transition-all duration-300 ${
                   scrolled
                     ? "border-stone text-stone hover:bg-stone hover:text-white"
                     : "border-white/60 text-white hover:bg-white/10"
                 }`}
               >
+                <MessageCircle size={14} />
                 {t("reservation")}
-              </Link>
+              </a>
 
               <button
                 onClick={() => setMobileOpen(!mobileOpen)}
@@ -177,13 +181,16 @@ export default function Header() {
               {t(link.labelKey)}
             </Link>
           ))}
-          <Link
-            href="/iletisim"
+          <a
+            href={`https://wa.me/${hotelInfo.whatsapp.replace(/[^0-9]/g, "")}`}
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setMobileOpen(false)}
-            className="mt-4 px-8 py-3 border border-stone-light text-stone-light text-sm tracking-[0.2em] uppercase hover:bg-stone-light hover:text-charcoal transition-all"
+            className="mt-4 inline-flex items-center gap-2 px-8 py-3 border border-stone-light text-stone-light text-sm tracking-[0.2em] uppercase hover:bg-stone-light hover:text-charcoal transition-all"
           >
+            <MessageCircle size={16} />
             {t("reservation")}
-          </Link>
+          </a>
           <div className="mt-4 flex items-center gap-1.5">
             <button onClick={() => { switchLocale("tr"); setMobileOpen(false); }} className={locale === "tr" ? "text-white text-lg" : "text-white/50 text-lg"}>TR</button>
             <span className="text-white/30">|</span>

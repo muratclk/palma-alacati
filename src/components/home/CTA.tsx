@@ -2,7 +2,9 @@
 
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
+import { MessageCircle } from "lucide-react";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import { hotelInfo } from "@/lib/data";
 
 export default function CTA() {
   const t = useTranslations("cta");
@@ -33,12 +35,15 @@ export default function CTA() {
             {t("description")}
           </p>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link
-              href="/iletisim"
-              className="px-10 py-4 bg-stone text-white text-sm tracking-[0.2em] uppercase font-medium hover:bg-stone-dark transition-colors"
+            <a
+              href={`https://wa.me/${hotelInfo.whatsapp.replace(/[^0-9]/g, "")}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-10 py-4 bg-[#25D366] hover:bg-[#1da851] text-white text-sm tracking-[0.2em] uppercase font-medium transition-colors"
             >
+              <MessageCircle size={18} />
               {t("bookNow")}
-            </Link>
+            </a>
             <Link
               href="/odalar"
               className="px-10 py-4 border border-white/40 text-white text-sm tracking-[0.2em] uppercase font-medium hover:bg-white/10 transition-colors"
