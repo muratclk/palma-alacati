@@ -10,7 +10,7 @@ export const hotelInfo = {
   instagram: "palmaalacati",
   checkIn: "15:00",
   checkOut: "11:00",
-  coordinates: { lat: 38.2826, lng: 26.3764 },
+  coordinates: { lat: 38.2771283, lng: 26.3737438 },
   whatsapp: "+905466976560",
   googleRating: 4.9,
   googleReviewCount: 12,

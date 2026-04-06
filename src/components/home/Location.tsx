@@ -21,7 +21,7 @@ export default function Location() {
           <ScrollReveal direction="left" className="lg:col-span-3">
             <div className="aspect-[4/3] lg:aspect-auto lg:h-full rounded-2xl overflow-hidden bg-cream-dark min-h-[400px]">
               <iframe
-                src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3127.8!2d${hotelInfo.coordinates.lng}!3d${hotelInfo.coordinates.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzjCsDE2JzU3LjQiTiAyNsKwMjInMzUuMCJF!5e0!3m2!1str!2str!4v1`}
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1563.9!2d26.3737438!3d38.2771283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14bb792ee260ea61%3A0x94ec4f68ba460479!2sPalma%20Ala%C3%A7at%C4%B1!5e0!3m2!1str!2str!4v1"
                 width="100%"
                 height="100%"
                 style={{ border: 0, minHeight: 400 }}
