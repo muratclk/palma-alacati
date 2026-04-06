@@ -28,7 +28,7 @@ export default function Testimonials() {
       {/* Background image */}
       <div className="absolute inset-0">
         <img
-          src="https://placehold.co/1920x800/2A3E31/FAF8F4?text=Alacati+Manzara"
+          src="/images/hotel/4ed14e72.jpg"
           alt=""
           className="w-full h-full object-cover"
           loading="lazy"

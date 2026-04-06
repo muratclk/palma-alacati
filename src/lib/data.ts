@@ -44,12 +44,12 @@ export const rooms: Room[] = [
     bedType: "King Yatak + Cift Kisilik Cekme Yatak",
     view: "Panoramik Alacati Manzarasi",
     price: "8.500",
-    image: "https://placehold.co/800x600/3D5A47/FAF8F4?text=Grand+Suite",
+    image: "/images/rooms/4d06e10d.jpg",
     gallery: [
-      "https://placehold.co/1200x800/3D5A47/FAF8F4?text=Grand+Suite+1",
-      "https://placehold.co/1200x800/5A7A6F/FAF8F4?text=Grand+Suite+2",
-      "https://placehold.co/1200x800/6A9BAA/FAF8F4?text=Grand+Suite+3",
-      "https://placehold.co/1200x800/B8956B/FAF8F4?text=Grand+Suite+4",
+      "/images/rooms/eb145162.jpg",
+      "/images/rooms/e403d0f8.jpg",
+      "/images/rooms/e4566d7f.jpg",
+      "/images/rooms/37e58cd8.jpg",
     ],
     amenities: [
       "Ozel Jakuzi",
@@ -79,11 +79,11 @@ export const rooms: Room[] = [
     bedType: "King Yatak",
     view: "Alacati Sokak Manzarasi",
     price: "6.500",
-    image: "https://placehold.co/800x600/5A7A6F/FAF8F4?text=Deluxe+Suite",
+    image: "/images/rooms/1fb73ee9.jpg",
     gallery: [
-      "https://placehold.co/1200x800/5A7A6F/FAF8F4?text=Deluxe+Suite+1",
-      "https://placehold.co/1200x800/3D5A47/FAF8F4?text=Deluxe+Suite+2",
-      "https://placehold.co/1200x800/B8956B/FAF8F4?text=Deluxe+Suite+3",
+      "/images/rooms/w2875h4032x0y0-31b45ebb.jpg",
+      "/images/rooms/9bb06987.jpg",
+      "/images/rooms/1841de9d.jpg",
     ],
     amenities: [
       "Ozel Balkon",
@@ -111,11 +111,11 @@ export const rooms: Room[] = [
     bedType: "Cift Kisilik Yatak",
     view: "Bahce Manzarasi",
     price: "4.500",
-    image: "https://placehold.co/800x600/6A9BAA/FAF8F4?text=Superior+Oda",
+    image: "/images/rooms/8a916da6.jpg",
     gallery: [
-      "https://placehold.co/1200x800/6A9BAA/FAF8F4?text=Superior+Oda+1",
-      "https://placehold.co/1200x800/3D5A47/FAF8F4?text=Superior+Oda+2",
-      "https://placehold.co/1200x800/B8956B/FAF8F4?text=Superior+Oda+3",
+      "/images/rooms/1a21576e.jpg",
+      "/images/rooms/5533b0ba.jpg",
+      "/images/rooms/a8c024c2.jpg",
     ],
     amenities: [
       "Bahce Manzarasi",
@@ -142,10 +142,10 @@ export const rooms: Room[] = [
     bedType: "Cift Kisilik Yatak",
     view: "Avlu Manzarasi",
     price: "3.000",
-    image: "https://placehold.co/800x600/B8956B/FAF8F4?text=Standart+Oda",
+    image: "/images/rooms/eefd6913.jpg",
     gallery: [
-      "https://placehold.co/1200x800/B8956B/FAF8F4?text=Standart+Oda+1",
-      "https://placehold.co/1200x800/3D5A47/FAF8F4?text=Standart+Oda+2",
+      "/images/rooms/8f52d654.jpg",
+      "/images/rooms/e0c90e2f.jpg",
     ],
     amenities: [
       "Cift Kisilik Yatak",
@@ -171,11 +171,11 @@ export const rooms: Room[] = [
     bedType: "Cift Kisilik Yatak",
     view: "Bahce",
     price: "4.000",
-    image: "https://placehold.co/800x600/3D5A47/FAF8F4?text=Bahce+Oda",
+    image: "/images/rooms/a6fdd4db.jpg",
     gallery: [
-      "https://placehold.co/1200x800/3D5A47/FAF8F4?text=Bahce+Oda+1",
-      "https://placehold.co/1200x800/5A7A6F/FAF8F4?text=Bahce+Oda+2",
-      "https://placehold.co/1200x800/6A9BAA/FAF8F4?text=Bahce+Oda+3",
+      "/images/rooms/bf0358c9.jpg",
+      "/images/rooms/91759d1e.jpg",
+      "/images/rooms/255a0a72.jpg",
     ],
     amenities: [
       "Ozel Teras",
@@ -202,12 +202,12 @@ export const rooms: Room[] = [
     bedType: "King Yatak",
     view: "360 Derece Alacati Manzarasi",
     price: "7.500",
-    image: "https://placehold.co/800x600/96754D/FAF8F4?text=Cati+Kati+Suite",
+    image: "/images/rooms/dbb69dad.jpg",
     gallery: [
-      "https://placehold.co/1200x800/96754D/FAF8F4?text=Cati+Kati+1",
-      "https://placehold.co/1200x800/3D5A47/FAF8F4?text=Cati+Kati+2",
-      "https://placehold.co/1200x800/6A9BAA/FAF8F4?text=Cati+Kati+3",
-      "https://placehold.co/1200x800/B8956B/FAF8F4?text=Cati+Kati+4",
+      "/images/rooms/f29760bf.jpg",
+      "/images/rooms/438a19c2.jpg",
+      "/images/rooms/1205fd3c.jpg",
+      "/images/rooms/4001fb51.jpg",
     ],
     amenities: [
       "Ozel Cati Terasi",
@@ -307,18 +307,18 @@ export const amenities = [
 ];
 
 export const galleryImages = [
-  { src: "https://placehold.co/800x600/3D5A47/FAF8F4?text=Otel+Genel", alt: "Palma Alacati dis gorunum", category: "otel" },
-  { src: "https://placehold.co/800x600/5A7A6F/FAF8F4?text=Havuz", alt: "Acik yuzme havuzu", category: "otel" },
-  { src: "https://placehold.co/800x600/6A9BAA/FAF8F4?text=Bahce", alt: "Otel bahcesi", category: "otel" },
-  { src: "https://placehold.co/800x600/B8956B/FAF8F4?text=Restoran", alt: "Ege mutfagi restoran", category: "restoran" },
-  { src: "https://placehold.co/800x600/96754D/FAF8F4?text=Kahvalti", alt: "Acik bufet kahvalti", category: "restoran" },
-  { src: "https://placehold.co/800x600/3D5A47/FAF8F4?text=Suite+Oda", alt: "Grand Suite oda", category: "odalar" },
-  { src: "https://placehold.co/800x600/6A9BAA/FAF8F4?text=Deluxe+Oda", alt: "Deluxe Suite", category: "odalar" },
-  { src: "https://placehold.co/800x600/5A7A6F/FAF8F4?text=SPA", alt: "SPA ve wellness", category: "spa" },
-  { src: "https://placehold.co/800x600/B8956B/FAF8F4?text=Teras", alt: "Cati terasi gun batimi", category: "otel" },
-  { src: "https://placehold.co/800x600/96754D/FAF8F4?text=Lobi", alt: "Otel lobisi", category: "otel" },
-  { src: "https://placehold.co/800x600/3D5A47/FAF8F4?text=Alacati+Sokak", alt: "Alacati sokaklari", category: "cevre" },
-  { src: "https://placehold.co/800x600/6A9BAA/FAF8F4?text=Deniz", alt: "Alacati sahil", category: "cevre" },
+  { src: "/images/hotel/325f6644.jpg", alt: "Palma Alacati dis gorunum", category: "otel" },
+  { src: "/images/hotel/6a4c7b08.jpg", alt: "Acik yuzme havuzu", category: "otel" },
+  { src: "/images/hotel/35f447c1.jpg", alt: "Otel bahcesi", category: "otel" },
+  { src: "/images/hotel/922ba4ad.jpg", alt: "Teras ve veranda", category: "otel" },
+  { src: "/images/hotel/9ac599d1.jpg", alt: "Dis mekan gorunum", category: "otel" },
+  { src: "/images/rooms/4d06e10d.jpg", alt: "Aegean Suite oturma alani", category: "odalar" },
+  { src: "/images/rooms/1fb73ee9.jpg", alt: "Deluxe Suite oturma alani", category: "odalar" },
+  { src: "/images/rooms/8a916da6.jpg", alt: "Superior Oda yatak odasi", category: "odalar" },
+  { src: "/images/rooms/dbb69dad.jpg", alt: "Aegean Suite yatak odasi", category: "odalar" },
+  { src: "/images/hotel/4ed14e72.jpg", alt: "Otel dis mekan detay", category: "otel" },
+  { src: "/images/hotel/81d0ecd4.jpg", alt: "Otel girisi", category: "otel" },
+  { src: "/images/rooms/9bb06987.jpg", alt: "Banyo ve dus", category: "odalar" },
 ];
 
 export const faqItems = [

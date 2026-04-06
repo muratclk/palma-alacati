@@ -8,7 +8,7 @@ export default function CTA() {
     <section className="relative py-32 md:py-40 overflow-hidden">
       <div className="absolute inset-0">
         <img
-          src="https://placehold.co/1920x600/96754D/FAF8F4?text=Gun+Batimi"
+          src="/images/hotel/922ba4ad.jpg"
           alt=""
           className="w-full h-full object-cover"
           loading="lazy"

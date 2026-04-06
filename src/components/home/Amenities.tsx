@@ -15,7 +15,7 @@ export default function Amenities() {
             <div className="relative">
               <div className="aspect-[3/4] rounded-2xl overflow-hidden">
                 <img
-                  src="https://placehold.co/800x1067/5A7A6F/FAF8F4?text=Otel+Bahce"
+                  src="/images/hotel/35f447c1.jpg"
                   alt="Palma Alacati bahce ve havuz alani"
                   className="w-full h-full object-cover"
                   loading="lazy"

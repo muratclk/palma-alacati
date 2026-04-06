@@ -30,7 +30,7 @@ export default function RoomsPage() {
       <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://placehold.co/1920x800/3D5A47/FAF8F4?text=Odalar"
+            src="/images/rooms/eb145162.jpg"
             alt="Palma Alacati odalar"
             className="w-full h-full object-cover"
           />

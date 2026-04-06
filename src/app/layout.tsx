@@ -51,7 +51,7 @@ export const metadata: Metadata = {
       "Alacati'nin kalbinde, geleneksel tas mimarisi ile modern konforu bulusturan butik otel deneyimi.",
     images: [
       {
-        url: "https://placehold.co/1200x630/3D5A47/FAF8F4?text=Palma+Alacati",
+        url: "/images/hotel/325f6644.jpg",
         width: 1200,
         height: 630,
         alt: "Palma Alacati Butik Otel",
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     title: "Palma Alacati | Butik Otel - Alacati, Cesme",
     description:
       "Alacati'nin kalbinde butik otel deneyimi. Ozel odalar, Ege kahvaltisi, havuz ve SPA.",
-    images: ["https://placehold.co/1200x630/3D5A47/FAF8F4?text=Palma+Alacati"],
+    images: ["/images/hotel/325f6644.jpg"],
   },
   robots: {
     index: true,

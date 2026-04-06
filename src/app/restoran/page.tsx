@@ -15,19 +15,19 @@ const menuCategories = [
     title: "Kahvalti",
     time: "08:00 - 11:00",
     description: "Her sabah taze hazirlanan zengin Ege kahvaltisi. Koyde uretilen peynirler, zeytinyagi, taze ekmek, recel cesitleri ve mevsim meyveleri.",
-    image: "https://placehold.co/800x600/96754D/FAF8F4?text=Kahvalti",
+    image: "/images/rooms/1841de9d.jpg",
   },
   {
     title: "Ogle Yemegi",
     time: "12:00 - 15:00",
     description: "Hafif Akdeniz lezzetleri, taze salatalar, zeytinyagli yemekler ve deniz urunleri. Havuz basinda veya restoran terasinda servis edilir.",
-    image: "https://placehold.co/800x600/5A7A6F/FAF8F4?text=Ogle+Yemegi",
+    image: "/images/rooms/438a19c2.jpg",
   },
   {
     title: "Aksam Yemegi",
     time: "19:00 - 22:00",
     description: "Sefimizin ozenle hazirladigi ozel menu. Ege'nin en iyi malzemeleriyle hazirlanan, mevsime gore degisen lezzetler. Reservasyon onerilir.",
-    image: "https://placehold.co/800x600/3D5A47/FAF8F4?text=Aksam+Yemegi",
+    image: "/images/rooms/4001fb51.jpg",
   },
 ];
 
@@ -67,7 +67,7 @@ export default function RestaurantPage() {
       <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://placehold.co/1920x800/96754D/FAF8F4?text=Restoran"
+            src="/images/rooms/6c726df4.jpg"
             alt="Palma Alacati restoran"
             className="w-full h-full object-cover"
           />
@@ -168,7 +168,7 @@ export default function RestaurantPage() {
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://placehold.co/1920x600/3D5A47/FAF8F4?text=Restoran+CTA"
+            src="/images/hotel/4ed14e72.jpg"
             alt=""
             className="w-full h-full object-cover"
             loading="lazy"

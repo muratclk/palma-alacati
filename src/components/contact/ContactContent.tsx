@@ -12,7 +12,7 @@ export default function ContactContent() {
       <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://placehold.co/1920x800/96754D/FAF8F4?text=Iletisim"
+            src="/images/hotel/922ba4ad.jpg"
             alt="Palma Alacati iletisim"
             className="w-full h-full object-cover"
           />

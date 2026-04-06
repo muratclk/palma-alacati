@@ -15,7 +15,7 @@ export default function About() {
             <div className="relative">
               <div className="aspect-[4/5] rounded-2xl overflow-hidden">
                 <img
-                  src="https://placehold.co/800x1000/3D5A47/FAF8F4?text=Otel+Dis+Gorunum"
+                  src="/images/hotel/81d0ecd4.jpg"
                   alt="Palma Alacati dis gorunum"
                   className="w-full h-full object-cover"
                   loading="lazy"
@@ -24,7 +24,7 @@ export default function About() {
               {/* Floating secondary image */}
               <div className="absolute -bottom-8 -right-8 w-48 md:w-64 aspect-square rounded-2xl overflow-hidden border-4 border-cream shadow-xl">
                 <img
-                  src="https://placehold.co/400x400/6A9BAA/FAF8F4?text=Havuz"
+                  src="/images/hotel/6a4c7b08.jpg"
                   alt="Havuz alani"
                   className="w-full h-full object-cover"
                   loading="lazy"

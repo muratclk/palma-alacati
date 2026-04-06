@@ -41,7 +41,7 @@ export default function AboutPage() {
       <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://placehold.co/1920x800/5A7A6F/FAF8F4?text=Hakkimizda"
+            src="/images/hotel/9ac599d1.jpg"
             alt="Palma Alacati hakkinda"
             className="w-full h-full object-cover"
           />
@@ -63,7 +63,7 @@ export default function AboutPage() {
               <div className="relative">
                 <div className="aspect-[4/5] rounded-2xl overflow-hidden">
                   <img
-                    src="https://placehold.co/800x1000/3D5A47/FAF8F4?text=Hikayemiz"
+                    src="/images/hotel/81d0ecd4.jpg"
                     alt="Palma Alacati hikayesi"
                     className="w-full h-full object-cover"
                     loading="lazy"

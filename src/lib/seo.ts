@@ -22,7 +22,7 @@ export function generateHotelJsonLd() {
       latitude: hotelInfo.coordinates.lat,
       longitude: hotelInfo.coordinates.lng,
     },
-    image: "https://placehold.co/1200x630/3D5A47/FAF8F4?text=Palma+Alacati",
+    image: "/images/hotel/325f6644.jpg",
     starRating: {
       "@type": "Rating",
       ratingValue: "4",

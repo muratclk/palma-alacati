@@ -5,17 +5,17 @@ import { ChevronLeft, ChevronRight, ChevronDown } from "lucide-react";
 
 const slides = [
   {
-    image: "https://placehold.co/1920x1080/2A3E31/FAF8F4?text=Palma+Alacati",
+    image: "/images/hotel/325f6644.jpg",
     title: "Ege'nin Kalbinde\nZarafet",
     subtitle: "Alacati'nin en ozel butik otel deneyimi",
   },
   {
-    image: "https://placehold.co/1920x1080/4D7D8C/FAF8F4?text=Havuz+ve+Bahce",
+    image: "/images/hotel/6a4c7b08.jpg",
     title: "Huzur Dolu\nAnlar",
     subtitle: "Zeytin agaclari arasinda unutulmaz bir tatil",
   },
   {
-    image: "https://placehold.co/1920x1080/96754D/FAF8F4?text=Ege+Kahvaltisi",
+    image: "/images/hotel/9ac599d1.jpg",
     title: "Ege'nin\nLezzetleri",
     subtitle: "Organik ve yerel malzemelerle hazırlanan sofra",
   },

@@ -30,7 +30,7 @@ export default function GalleryPage() {
       <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://placehold.co/1920x800/6A9BAA/FAF8F4?text=Galeri"
+            src="/images/hotel/35f447c1.jpg"
             alt="Palma Alacati galeri"
             className="w-full h-full object-cover"
           />
