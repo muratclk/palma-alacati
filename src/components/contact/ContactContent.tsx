@@ -131,7 +131,7 @@ export default function ContactContent() {
           <ScrollReveal className="text-center mb-12">
             <SectionLabel text="SSS" />
             <h2 className="font-heading text-3xl md:text-4xl text-charcoal mt-4">
-              Sik Sorulan <span className="text-stone italic">Sorular</span>
+              Sık Sorulan <span className="text-stone italic">Sorular</span>
             </h2>
           </ScrollReveal>
           <div className="space-y-4">
