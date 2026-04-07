@@ -28,11 +28,32 @@ export async function generateMetadata({
   };
 }
 
-export default function RoomsPage() {
+export default async function RoomsPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "rooms" });
+  const dataT = await getTranslations({ locale, namespace: "data" });
+
   const breadcrumbJsonLd = generateBreadcrumbJsonLd([
-    { name: "Ana Sayfa", url: "https://palmaalacati.com" },
-    { name: "Odalar", url: "https://palmaalacati.com/odalar" },
+    { name: t("allRooms"), url: "https://palmaalacati.com" },
+    { name: t("label"), url: "https://palmaalacati.com/odalar" },
   ]);
+
+  const getDescription = (slug: string) => {
+    const keyMap: Record<string, string> = {
+      pietra: "roomPietraDesc",
+      acqua: "roomAcquaDesc",
+      terra: "roomTerraDesc",
+      priva: "roomPrivaDesc",
+      aria: "roomAriaDesc",
+      curva: "roomCurvaDesc",
+      luce: "roomLuceDesc",
+    };
+    return dataT(keyMap[slug] || "roomPietraDesc");
+  };
 
   return (
     <>
@@ -45,19 +66,19 @@ export default function RoomsPage() {
       <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/images/rooms/eb145162.jpg"
+            src="/images/hotel/4001fb51.jpg"
             alt="Palma Alacati odalar"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-charcoal/50" />
         </div>
         <div className="relative text-center px-4">
-          <SectionLabel text="Konaklama" className="[&]:text-stone-light [&::before]:bg-stone/50 [&::after]:bg-stone/50" />
+          <SectionLabel text={t("accommodationLabel")} className="[&]:text-stone-light [&::before]:bg-stone/50 [&::after]:bg-stone/50" />
           <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl text-white mt-4">
-            Daireler &amp; Suitler
+            {t("heading")}
           </h1>
           <p className="text-white/70 mt-4 text-lg max-w-xl mx-auto">
-            Her biri kendine ozgu tasarimi ve ozel mutfagi ile 5 ozel daire
+            {t("roomsSubtitle")}
           </p>
         </div>
       </section>
@@ -76,11 +97,11 @@ export default function RoomsPage() {
                   {/* Image */}
                   <Link
                     href={`/odalar/${room.slug}`}
-                    className="group block relative overflow-hidden rounded-2xl aspect-[4/3]"
+                    className="group block relative overflow-hidden rounded-2xl aspect-[3/4] sm:aspect-[4/5]"
                   >
                     <img
                       src={room.image}
-                      alt={room.name}
+                      alt={locale === "en" ? room.nameEn : room.name}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       loading="lazy"
                     />
@@ -96,14 +117,14 @@ export default function RoomsPage() {
                       </span>
                       <span className="flex items-center gap-1.5">
                         <Users size={14} />
-                        {room.capacity} Kisi
+                        {room.capacity} {t("person")}
                       </span>
                     </div>
                     <h2 className="font-heading text-3xl md:text-4xl text-charcoal">
-                      {room.name}
+                      {locale === "en" ? room.nameEn : room.name}
                     </h2>
                     <p className="mt-4 text-warm-gray leading-relaxed">
-                      {room.description}
+                      {getDescription(room.slug)}
                     </p>
                     <div className="mt-4 flex flex-wrap gap-2">
                       {room.amenities.slice(0, 5).map((a) => (
@@ -111,7 +132,7 @@ export default function RoomsPage() {
                           key={a}
                           className="px-3 py-1 bg-sage/10 text-sage text-xs rounded-full"
                         >
-                          {a}
+                          {dataT(a)}
                         </span>
                       ))}
                       {room.amenities.length > 5 && (
@@ -124,10 +145,10 @@ export default function RoomsPage() {
                       <span className="font-heading text-2xl text-stone">
                         {room.price
                           ? `${room.price} TL`
-                          : "Fiyat Icin Arayin"}
+                          : t("callForPriceShort")}
                         {room.price && (
                           <span className="text-warm-gray text-sm font-sans">
-                            {" "}/ gece
+                            {" "}{t("pricePerNight")}
                           </span>
                         )}
                       </span>
@@ -135,7 +156,7 @@ export default function RoomsPage() {
                         href={`/odalar/${room.slug}`}
                         className="inline-flex items-center gap-2 text-stone text-sm tracking-[0.1em] uppercase font-medium hover:gap-3 transition-all"
                       >
-                        Detay
+                        {t("detail")}
                         <ArrowRight size={16} />
                       </Link>
                     </div>

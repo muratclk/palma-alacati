@@ -11,8 +11,10 @@ import {
 } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
+import { getTranslations } from "next-intl/server";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import SectionLabel from "@/components/ui/SectionLabel";
+import Lightbox from "@/components/ui/Lightbox";
 import { rooms, hotelInfo } from "@/lib/data";
 import { generateRoomJsonLd, generateBreadcrumbJsonLd } from "@/lib/seo";
 
@@ -30,9 +32,11 @@ export async function generateMetadata({
   const { locale, slug } = await params;
   const room = rooms.find((r) => r.slug === slug);
   if (!room) return {};
+  const t = await getTranslations({ locale, namespace: "seo" });
+  const roomName = locale === "en" ? room.nameEn : room.name;
   return {
-    title: `${room.name} - Odalar`,
-    description: `${room.name} - ${room.description.slice(0, 160)}`,
+    title: `${roomName} ${t("roomDetailSuffix")}`,
+    description: `${roomName} - ${room.description.slice(0, 160)}`,
     alternates: {
       canonical: `https://palmaalacati.com/${locale}/odalar/${room.slug}`,
       languages: {
@@ -41,7 +45,7 @@ export async function generateMetadata({
       },
     },
     openGraph: {
-      images: [{ url: room.image, width: 800, height: 600, alt: room.name }],
+      images: [{ url: room.image, width: 800, height: 600, alt: roomName }],
     },
   };
 }
@@ -51,15 +55,44 @@ export default async function RoomDetailPage({
 }: {
   params: Promise<{ locale: string; slug: string }>;
 }) {
-  const { slug } = await params;
+  const { locale, slug } = await params;
   const room = rooms.find((r) => r.slug === slug);
   if (!room) notFound();
 
+  const t = await getTranslations({ locale, namespace: "rooms" });
+  const dataT = await getTranslations({ locale, namespace: "data" });
+  const seoT = await getTranslations({ locale, namespace: "seo" });
+
+  const roomName = locale === "en" ? room.nameEn : room.name;
+
+  const getDescription = (s: string) => {
+    const keyMap: Record<string, string> = {
+      pietra: "roomPietraDesc",
+      acqua: "roomAcquaDesc",
+      terra: "roomTerraDesc",
+      priva: "roomPrivaDesc",
+      aria: "roomAriaDesc",
+      curva: "roomCurvaDesc",
+      luce: "roomLuceDesc",
+    };
+    return dataT(keyMap[s] || "roomPietraDesc");
+  };
+
+  const getBedType = (bedType: string) => {
+    if (bedType.includes("+")) return dataT("doublePlusSingleBeds");
+    return dataT("doubleBed");
+  };
+
+  const getView = (view: string) => {
+    if (view.includes("Havuz")) return dataT("poolGardenView");
+    return dataT("gardenView");
+  };
+
   const roomJsonLd = generateRoomJsonLd(room);
   const breadcrumbJsonLd = generateBreadcrumbJsonLd([
-    { name: "Ana Sayfa", url: "https://palmaalacati.com" },
-    { name: "Odalar", url: "https://palmaalacati.com/odalar" },
-    { name: room.name, url: `https://palmaalacati.com/odalar/${room.slug}` },
+    { name: seoT("breadcrumbHome"), url: "https://palmaalacati.com" },
+    { name: seoT("breadcrumbRooms"), url: "https://palmaalacati.com/odalar" },
+    { name: roomName, url: `https://palmaalacati.com/odalar/${room.slug}` },
   ]);
 
   const otherRooms = rooms.filter((r) => r.slug !== room.slug).slice(0, 3);
@@ -80,7 +113,7 @@ export default async function RoomDetailPage({
         <div className="absolute inset-0">
           <img
             src={room.gallery[0] || room.image}
-            alt={room.name}
+            alt={roomName}
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/20 to-transparent" />
@@ -91,27 +124,27 @@ export default async function RoomDetailPage({
             className="inline-flex items-center gap-2 text-white/60 text-sm hover:text-white transition-colors mb-4"
           >
             <ArrowLeft size={14} />
-            Tum Odalar
+            {t("allRooms")}
           </Link>
           <h1 className="font-heading text-5xl md:text-6xl text-white">
-            {room.name}
+            {roomName}
           </h1>
-          <div className="flex items-center gap-6 mt-4 text-white/70 text-sm">
+          <div className="flex flex-wrap items-center gap-4 sm:gap-6 mt-4 text-white/70 text-sm">
             <span className="flex items-center gap-1.5">
               <Maximize size={14} />
               {room.size} m&sup2;
             </span>
             <span className="flex items-center gap-1.5">
               <Users size={14} />
-              {room.capacity} Kisi
+              {room.capacity} {t("person")}
             </span>
             <span className="flex items-center gap-1.5">
               <Eye size={14} />
-              {room.view}
+              {getView(room.view)}
             </span>
             <span className="flex items-center gap-1.5">
               <BedDouble size={14} />
-              {room.bedType}
+              {getBedType(room.bedType)}
             </span>
           </div>
         </div>
@@ -125,35 +158,20 @@ export default async function RoomDetailPage({
             <div className="lg:col-span-2">
               <ScrollReveal>
                 <h2 className="font-heading text-3xl text-charcoal">
-                  Oda Hakkinda
+                  {t("aboutRoom")}
                 </h2>
                 <p className="mt-4 text-warm-gray leading-relaxed text-lg">
-                  {room.description}
+                  {getDescription(room.slug)}
                 </p>
               </ScrollReveal>
 
-              {/* Gallery grid */}
+              {/* Gallery grid with Lightbox */}
               <ScrollReveal className="mt-12">
-                <h3 className="font-heading text-2xl text-charcoal mb-6">
-                  Galeri
-                </h3>
-                <div className="grid grid-cols-2 gap-3">
-                  {room.gallery.map((img, i) => (
-                    <div
-                      key={i}
-                      className={`overflow-hidden rounded-xl ${
-                        i === 0 ? "col-span-2 aspect-[16/9]" : "aspect-[4/3]"
-                      }`}
-                    >
-                      <img
-                        src={img}
-                        alt={`${room.name} - ${i + 1}`}
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                        loading="lazy"
-                      />
-                    </div>
-                  ))}
-                </div>
+                <Lightbox
+                  images={room.gallery}
+                  alt={roomName}
+                  galleryTitle={t("galleryTitle")}
+                />
               </ScrollReveal>
             </div>
 
@@ -168,12 +186,12 @@ export default async function RoomDetailPage({
                           {room.price} TL
                         </span>
                         <span className="text-warm-gray text-sm block mt-1">
-                          / gece
+                          {t("pricePerNight")}
                         </span>
                       </>
                     ) : (
                       <span className="font-heading text-2xl text-stone">
-                        Fiyat Icin Arayin
+                        {t("callForPriceShort")}
                       </span>
                     )}
                   </div>
@@ -181,45 +199,45 @@ export default async function RoomDetailPage({
                   {/* Room details */}
                   <div className="space-y-3 mb-6">
                     <div className="flex items-center justify-between text-sm">
-                      <span className="text-warm-gray">Alan</span>
+                      <span className="text-warm-gray">{t("area")}</span>
                       <span className="text-charcoal font-medium">
                         {room.size} m&sup2;
                       </span>
                     </div>
                     <div className="flex items-center justify-between text-sm">
-                      <span className="text-warm-gray">Kapasite</span>
+                      <span className="text-warm-gray">{t("capacity")}</span>
                       <span className="text-charcoal font-medium">
-                        {room.capacity} Kisi
+                        {room.capacity} {t("person")}
                       </span>
                     </div>
                     <div className="flex items-center justify-between text-sm">
-                      <span className="text-warm-gray">Yatak</span>
+                      <span className="text-warm-gray">{t("bed")}</span>
                       <span className="text-charcoal font-medium">
-                        {room.bedType}
+                        {getBedType(room.bedType)}
                       </span>
                     </div>
                     <div className="flex items-center justify-between text-sm">
-                      <span className="text-warm-gray">Manzara</span>
+                      <span className="text-warm-gray">{t("view")}</span>
                       <span className="text-charcoal font-medium">
-                        {room.view}
+                        {getView(room.view)}
                       </span>
                     </div>
                   </div>
 
                   <a
-                    href={`https://wa.me/${hotelInfo.whatsapp.replace(/[^0-9]/g, "")}?text=${encodeURIComponent(`Merhaba, ${room.name} odası için rezervasyon yapmak istiyorum.`)}`}
+                    href={`https://wa.me/${hotelInfo.whatsapp.replace(/[^0-9]/g, "")}?text=${encodeURIComponent(locale === "en" ? `Hello, I would like to make a reservation for the ${roomName} room.` : `Merhaba, ${roomName} odası için rezervasyon yapmak istiyorum.`)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center gap-2 w-full py-3.5 bg-stone hover:bg-stone-dark text-white text-sm tracking-[0.15em] uppercase font-medium transition-colors rounded-lg"
                   >
                     <MessageCircle size={16} />
-                    Rezervasyon Yap
+                    {t("bookNow")}
                   </a>
 
                   {/* Amenities */}
                   <div className="mt-6 pt-6 border-t border-border">
                     <h4 className="text-sm font-medium text-charcoal mb-3">
-                      Oda Olanaklari
+                      {t("roomAmenities")}
                     </h4>
                     <div className="space-y-2">
                       {room.amenities.map((a) => (
@@ -228,7 +246,7 @@ export default async function RoomDetailPage({
                           className="flex items-center gap-2 text-sm text-warm-gray"
                         >
                           <Check size={14} className="text-sage flex-shrink-0" />
-                          {a}
+                          {dataT(a)}
                         </div>
                       ))}
                     </div>
@@ -244,9 +262,9 @@ export default async function RoomDetailPage({
       <section className="py-16 md:py-24 bg-cream-dark/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal className="text-center mb-12">
-            <SectionLabel text="Diger Odalar" />
+            <SectionLabel text={t("otherRoomsLabel")} />
             <h2 className="font-heading text-3xl md:text-4xl text-charcoal mt-4">
-              Diger Odalarimiz
+              {t("otherRoomsHeading")}
             </h2>
           </ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -256,17 +274,17 @@ export default async function RoomDetailPage({
                   href={`/odalar/${r.slug}`}
                   className="group block overflow-hidden rounded-2xl"
                 >
-                  <div className="relative aspect-[4/3] overflow-hidden">
+                  <div className="relative aspect-[3/4] sm:aspect-[4/5] overflow-hidden">
                     <img
                       src={r.image}
-                      alt={r.name}
+                      alt={locale === "en" ? r.nameEn : r.name}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                       loading="lazy"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-6">
                       <h3 className="font-heading text-2xl text-white">
-                        {r.name}
+                        {locale === "en" ? r.nameEn : r.name}
                       </h3>
                       <p className="text-white/60 text-sm mt-1">
                         {r.shortDescription}

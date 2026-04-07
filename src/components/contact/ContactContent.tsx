@@ -105,11 +105,13 @@ export default function ContactContent() {
                   <label className="block text-sm text-charcoal mb-1.5">{t("roomPreference")}</label>
                   <select className="w-full px-4 py-3 bg-white border border-border rounded-lg text-sm focus:outline-none focus:border-sage transition-colors appearance-none">
                     <option value="">{t("selectRoom")}</option>
-                    <option value="aegean-suit">Aegean Suit</option>
-                    <option value="deluxe-apart-duplex">Deluxe Apart Duplex</option>
-                    <option value="design-apart">Design Apart Daire</option>
+                    <option value="pietra">Pietra</option>
                     <option value="acqua">Acqua</option>
+                    <option value="terra">Terra</option>
+                    <option value="priva">Priva</option>
+                    <option value="aria">Aria</option>
                     <option value="curva">Curva</option>
+                    <option value="luce">Luce</option>
                   </select>
                 </div>
                 <div>

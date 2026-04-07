@@ -28,7 +28,7 @@ export async function generateMetadata({
 const timeline = [
   { year: "2022", title: "Kurulusumuz", description: "Palma Alacati, Hacimemis Mahallesi'nde butik apart otel olarak hayata gecti." },
   { year: "2023", title: "Buyume", description: "Yeni daireler eklendi, mevsimlik acik havuz hizmete acildi." },
-  { year: "2024", title: "Gelisim", description: "Aegean Suit ve Deluxe Apart Duplex konseptleri ile premium deneyim sunulmaya baslandi." },
+  { year: "2024", title: "Gelisim", description: "Pietra, Aria ve Luce konseptleri ile premium deneyim sunulmaya baslandi." },
   { year: "2025", title: "Yeni Donem", description: "Google'da 4.9 puan ile Alacati'nin en ozel adreslerinden biri olarak anilmaya baslandi." },
 ];
 

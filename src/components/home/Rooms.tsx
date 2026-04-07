@@ -16,13 +16,15 @@ export default function Rooms() {
 
   const getShortDesc = (slug: string) => {
     const keyMap: Record<string, string> = {
-      "aegean-suit": "roomAegeanShort",
-      "deluxe-apart-duplex": "roomDeluxeShort",
-      "design-apart": "roomDesignShort",
+      "pietra": "roomPietraShort",
       "acqua": "roomAcquaShort",
+      "terra": "roomTerraShort",
+      "priva": "roomPrivaShort",
+      "aria": "roomAriaShort",
       "curva": "roomCurvaShort",
+      "luce": "roomLuceShort",
     };
-    return dataT(keyMap[slug] || "roomAegeanShort");
+    return dataT(keyMap[slug] || "roomPietraShort");
   };
 
   return (
@@ -44,7 +46,7 @@ export default function Rooms() {
               <Link href={`/odalar/${room.slug}`} className="group block">
                 <div
                   className={`relative overflow-hidden rounded-2xl ${
-                    index === 0 ? "md:row-span-2 aspect-[4/5] md:aspect-auto md:h-full" : "aspect-[3/2]"
+                    index === 0 ? "md:row-span-2 aspect-[3/4] md:aspect-auto md:h-full" : "aspect-[3/4]"
                   }`}
                 >
                   <img
