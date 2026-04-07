@@ -59,7 +59,7 @@ export default function About() {
 
             <div className="mt-8 flex flex-wrap gap-8">
               <div>
-                <span className="font-heading text-4xl text-sage">5</span>
+                <span className="font-heading text-4xl text-sage">7</span>
                 <span className="block text-sm text-warm-gray mt-1">{t("statRooms")}</span>
               </div>
               <div>

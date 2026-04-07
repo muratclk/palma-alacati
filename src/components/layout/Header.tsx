@@ -57,11 +57,11 @@ export default function Header() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-9">
             <div className="flex items-center gap-4">
               <a
-                href="tel:+902327160000"
+                href="tel:+905369148183"
                 className="flex items-center gap-1.5 hover:text-stone-light transition-colors"
               >
                 <Phone size={12} />
-                <span>+90 232 716 00 00</span>
+                <span>+90 536 914 81 83</span>
               </a>
               <a
                 href="mailto:info@palmaalacati.com"
@@ -197,8 +197,8 @@ export default function Header() {
             <button onClick={() => { switchLocale("en"); setMobileOpen(false); }} className={locale === "en" ? "text-white text-lg" : "text-white/50 text-lg"}>EN</button>
           </div>
           <div className="mt-8 text-warm-gray text-sm flex flex-col items-center gap-2">
-            <a href="tel:+902327160000" className="hover:text-stone-light transition-colors">
-              +90 232 716 00 00
+            <a href="tel:+905369148183" className="hover:text-stone-light transition-colors">
+              +90 536 914 81 83
             </a>
             <span>info@palmaalacati.com</span>
           </div>
