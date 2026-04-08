@@ -15,7 +15,7 @@ const amenityKeys = [
   "garden",
   "outdoorSeating",
   "freeWater",
-  "multilingualStaff",
+  "privateBar",
 ] as const;
 
 export default function Amenities() {
@@ -31,7 +31,7 @@ export default function Amenities() {
               <div className="aspect-[3/4] rounded-2xl overflow-hidden">
                 <img
                   src="/images/hotel/35f447c1.jpg"
-                  alt="Palma Alacati bahce ve havuz alani"
+                  alt="Palma Alaçatı bahce ve havuz alani"
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />

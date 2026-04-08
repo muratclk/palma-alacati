@@ -17,7 +17,6 @@ export default function ContactContent() {
     { question: faq("q4"), answer: faq("a4") },
     { question: faq("q5"), answer: faq("a5") },
     { question: faq("q6"), answer: faq("a6") },
-    { question: faq("q7"), answer: faq("a7") },
     { question: faq("q8"), answer: faq("a8") },
     { question: faq("q9"), answer: faq("a9") },
   ];
@@ -29,7 +28,7 @@ export default function ContactContent() {
         <div className="absolute inset-0">
           <img
             src="/images/hotel/922ba4ad.jpg"
-            alt="Palma Alacati iletisim"
+            alt="Palma Alaçatı iletisim"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-charcoal/50" />
@@ -69,76 +68,21 @@ export default function ContactContent() {
             ))}
           </div>
 
-          {/* Form + Map */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <ScrollReveal direction="left">
-              <SectionLabel text={t("reservationLabel")} />
-              <h2 className="font-heading text-3xl md:text-4xl text-charcoal mt-4 mb-8">
-                {t("formHeading1")} <span className="text-stone italic">{t("formHeading2")}</span>
-              </h2>
-              <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                  <div>
-                    <label className="block text-sm text-charcoal mb-1.5">{t("fullName")}</label>
-                    <input type="text" className="w-full px-4 py-3 bg-white border border-border rounded-lg text-sm focus:outline-none focus:border-sage transition-colors" placeholder={t("fullNamePlaceholder")} />
-                  </div>
-                  <div>
-                    <label className="block text-sm text-charcoal mb-1.5">{t("phone")}</label>
-                    <input type="tel" className="w-full px-4 py-3 bg-white border border-border rounded-lg text-sm focus:outline-none focus:border-sage transition-colors" placeholder={t("phonePlaceholder")} />
-                  </div>
-                </div>
-                <div>
-                  <label className="block text-sm text-charcoal mb-1.5">{t("emailLabel")}</label>
-                  <input type="email" className="w-full px-4 py-3 bg-white border border-border rounded-lg text-sm focus:outline-none focus:border-sage transition-colors" placeholder={t("emailPlaceholder")} />
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                  <div>
-                    <label className="block text-sm text-charcoal mb-1.5">{t("checkInDate")}</label>
-                    <input type="date" className="w-full px-4 py-3 bg-white border border-border rounded-lg text-sm focus:outline-none focus:border-sage transition-colors" />
-                  </div>
-                  <div>
-                    <label className="block text-sm text-charcoal mb-1.5">{t("checkOutDate")}</label>
-                    <input type="date" className="w-full px-4 py-3 bg-white border border-border rounded-lg text-sm focus:outline-none focus:border-sage transition-colors" />
-                  </div>
-                </div>
-                <div>
-                  <label className="block text-sm text-charcoal mb-1.5">{t("roomPreference")}</label>
-                  <select className="w-full px-4 py-3 bg-white border border-border rounded-lg text-sm focus:outline-none focus:border-sage transition-colors appearance-none">
-                    <option value="">{t("selectRoom")}</option>
-                    <option value="pietra">Pietra</option>
-                    <option value="acqua">Acqua</option>
-                    <option value="terra">Terra</option>
-                    <option value="priva">Priva</option>
-                    <option value="aria">Aria</option>
-                    <option value="curva">Curva</option>
-                    <option value="luce">Luce</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="block text-sm text-charcoal mb-1.5">{t("message")}</label>
-                  <textarea rows={4} className="w-full px-4 py-3 bg-white border border-border rounded-lg text-sm focus:outline-none focus:border-sage transition-colors resize-none" placeholder={t("messagePlaceholder")} />
-                </div>
-                <button type="submit" className="w-full py-3.5 bg-stone text-white text-sm tracking-[0.15em] uppercase font-medium hover:bg-stone-dark transition-colors rounded-lg">
-                  {t("submitButton")}
-                </button>
-              </form>
-            </ScrollReveal>
-
-            <ScrollReveal direction="right">
-              <div id="map" className="h-full min-h-[500px] rounded-2xl overflow-hidden">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1563.9!2d26.3737438!3d38.2771283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14bb792ee260ea61%3A0x94ec4f68ba460479!2sPalma%20Ala%C3%A7at%C4%B1!5e0!3m2!1str!2str!4v1"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0, minHeight: 500 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Palma Alacati konum"
-                />
-              </div>
-            </ScrollReveal>
-          </div>
+          {/* Map */}
+          <ScrollReveal>
+            <div id="map" className="rounded-2xl overflow-hidden">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1563.9!2d26.3737438!3d38.2771283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14bb792ee260ea61%3A0x94ec4f68ba460479!2sPalma%20Ala%C3%A7at%C4%B1!5e0!3m2!1str!2str!4v1"
+                width="100%"
+                height="450"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Palma Alaçatı konum"
+              />
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 

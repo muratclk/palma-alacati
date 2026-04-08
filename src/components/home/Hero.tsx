@@ -8,7 +8,7 @@ import { hotelInfo } from "@/lib/data";
 const slideImages = [
   "/images/hotel/325f6644.jpg",
   "/images/hotel/6a4c7b08.jpg",
-  "/images/hotel/9ac599d1.jpg",
+  "/images/hotel/bar.jpg",
 ];
 
 export default function Hero() {
@@ -65,10 +65,10 @@ export default function Hero() {
       {/* Content */}
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="text-center px-4 max-w-4xl">
-          <div className="overflow-hidden">
+          <div className="overflow-hidden py-2">
             <h1
               key={current}
-              className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white leading-[1.1] tracking-wide animate-[fadeInUp_0.8s_ease-out]"
+              className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white leading-[1.15] tracking-wide animate-[fadeInUp_0.8s_ease-out]"
               style={{ whiteSpace: "pre-line", textShadow: "0 2px 20px rgba(0,0,0,0.4)" }}
             >
               {slides[current].title}

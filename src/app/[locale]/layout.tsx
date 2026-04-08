@@ -39,7 +39,7 @@ export async function generateMetadata({
     metadataBase: new URL("https://palmaalacati.com"),
     title: {
       default: t("homeTitle"),
-      template: "%s | Palma Alacati",
+      template: "%s | Palma Alaçatı",
     },
     description: t("homeDescription"),
     keywords: [
@@ -55,13 +55,13 @@ export async function generateMetadata({
       "alacati accommodation",
       "hacimemis alacati",
     ],
-    authors: [{ name: "Palma Alacati" }],
-    creator: "Palma Alacati",
+    authors: [{ name: "Palma Alaçatı" }],
+    creator: "Palma Alaçatı",
     openGraph: {
       type: "website",
       locale: locale === "tr" ? "tr_TR" : "en_US",
       url: `https://palmaalacati.com/${locale}`,
-      siteName: "Palma Alacati",
+      siteName: "Palma Alaçatı",
       title: t("homeTitle"),
       description: t("homeDescription"),
       images: [
@@ -69,7 +69,7 @@ export async function generateMetadata({
           url: "/images/hotel/325f6644.jpg",
           width: 1200,
           height: 630,
-          alt: "Palma Alacati Butik Otel",
+          alt: "Palma Alaçatı Butik Otel",
         },
       ],
     },

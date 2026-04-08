@@ -108,7 +108,7 @@ export default function Header() {
                     scrolled ? "text-stone" : "text-stone-light"
                   }`}
                 >
-                  Alacati
+                  Alaçatı
                 </span>
               </div>
             </Link>

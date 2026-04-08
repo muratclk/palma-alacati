@@ -67,7 +67,7 @@ export default async function RoomsPage({
         <div className="absolute inset-0">
           <img
             src="/images/hotel/4001fb51.jpg"
-            alt="Palma Alacati odalar"
+            alt="Palma Alaçatı odalar"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-charcoal/50" />

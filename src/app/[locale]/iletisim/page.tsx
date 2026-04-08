@@ -28,7 +28,7 @@ export async function generateMetadata({
 export default function ContactPage() {
   const breadcrumbJsonLd = generateBreadcrumbJsonLd([
     { name: "Ana Sayfa", url: "https://palmaalacati.com" },
-    { name: "Iletisim", url: "https://palmaalacati.com/iletisim" },
+    { name: "İletişim", url: "https://palmaalacati.com/iletisim" },
   ]);
   const faqJsonLd = generateFAQJsonLd(faqItems);
 

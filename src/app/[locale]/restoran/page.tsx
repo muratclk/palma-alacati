@@ -85,7 +85,7 @@ export default function RestaurantPage() {
         <div className="absolute inset-0">
           <img
             src="/images/rooms/6c726df4.jpg"
-            alt="Palma Alacati restoran"
+            alt="Palma Alaçatı restoran"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-charcoal/50" />
@@ -110,10 +110,10 @@ export default function RestaurantPage() {
               Tabaktan <span className="text-stone italic">Sofralara</span>
             </h2>
             <p className="mt-6 text-warm-gray text-lg leading-relaxed">
-              Palma Alacati mutfaginda, Ege&apos;nin zengin gastronomik mirasini
-              modern sunumlarla birlestiriyoruz. Bahcemizden toplanan taze otlar,
-              yerel ureticilerden gelen peynirler ve zeytinyaglari ile hazirlanan
-              yemeklerimiz, her lokmasiyla Alacati&apos;nin tadini sunar.
+              Palma Alaçatı mutfağında, Ege&apos;nin zengin gastronomik mirasını
+              modern sunumlarla birleştiriyoruz. Bahçemizden toplanan taze otlar,
+              yerel üreticilerden gelen peynirler ve zeytinyağları ile hazırlanan
+              yemeklerimiz, her lokmasıyla Alaçatı&apos;nın tadını sunar.
             </p>
           </ScrollReveal>
 

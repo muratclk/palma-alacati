@@ -24,7 +24,7 @@ export default function CTA() {
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <ScrollReveal>
           <span className="text-stone-light text-sm tracking-[0.3em] uppercase">
-            Palma Alacati
+            Palma Alaçatı
           </span>
           <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-white mt-4 leading-[1.15]">
             {t("heading1")}

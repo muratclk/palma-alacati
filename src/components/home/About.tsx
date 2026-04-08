@@ -19,7 +19,7 @@ export default function About() {
               <div className="aspect-[4/5] rounded-2xl overflow-hidden">
                 <img
                   src="/images/hotel/81d0ecd4.jpg"
-                  alt="Palma Alacati dis gorunum"
+                  alt="Palma Alaçatı dis gorunum"
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
@@ -66,12 +66,6 @@ export default function About() {
                 <span className="font-heading text-4xl text-sage">4.9</span>
                 <span className="block text-sm text-warm-gray mt-1">
                   {t("statRating")}
-                </span>
-              </div>
-              <div>
-                <span className="font-heading text-4xl text-sage">3</span>
-                <span className="block text-sm text-warm-gray mt-1">
-                  {t("statLanguages")}
                 </span>
               </div>
             </div>

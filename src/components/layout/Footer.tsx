@@ -71,7 +71,7 @@ export default function Footer() {
                 PALMA
               </span>
               <span className="block text-[10px] tracking-[0.4em] uppercase text-stone-light">
-                Alacati
+                Alaçatı
               </span>
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-warm-gray">
@@ -165,7 +165,7 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex items-center justify-between">
           <p className="text-xs text-warm-gray">
-            &copy; {new Date().getFullYear()} Palma Alacati. {t("copyright")}
+            &copy; {new Date().getFullYear()} Palma Alaçatı. {t("copyright")}
           </p>
           <button
             onClick={scrollToTop}

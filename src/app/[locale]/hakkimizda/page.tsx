@@ -26,23 +26,23 @@ export async function generateMetadata({
 }
 
 const timeline = [
-  { year: "2022", title: "Kurulusumuz", description: "Palma Alacati, Hacimemis Mahallesi'nde butik apart otel olarak hayata gecti." },
-  { year: "2023", title: "Buyume", description: "Yeni daireler eklendi, mevsimlik acik havuz hizmete acildi." },
-  { year: "2024", title: "Gelisim", description: "Pietra, Aria ve Luce konseptleri ile premium deneyim sunulmaya baslandi." },
-  { year: "2025", title: "Yeni Donem", description: "Google'da 4.9 puan ile Alacati'nin en ozel adreslerinden biri olarak anilmaya baslandi." },
+  { year: "2022", title: "Kuruluşumuz", description: "Palma Alaçatı, Hacımemiş Mahallesi'nde butik apart otel olarak hayata geçti." },
+  { year: "2023", title: "Büyüme", description: "Yeni daireler eklendi, mevsimlik açık havuz hizmete açıldı." },
+  { year: "2024", title: "Gelişim", description: "Pietra, Aria ve Luce konseptleri ile premium deneyim sunulmaya başlandı." },
+  { year: "2025", title: "Yeni Dönem", description: "Google'da 4.9 puan ile Alaçatı'nın en özel adreslerinden biri olarak anılmaya başlandı." },
 ];
 
 const values = [
-  { title: "Misafirperverlik", description: "Her misafirimizi ailemizin bir parcasi olarak goruyor, sicak ve samimi bir karsilama sunuyoruz." },
-  { title: "Surdurulebilirlik", description: "Dogaya saygi ilkemizle, organik malzemeler ve yenilenebilir enerji kullaniyoruz." },
-  { title: "Ozgunluk", description: "Alacati'nin tarihi ve kulturel dokusunu koruyarak, otantik bir deneyim yaratiyoruz." },
-  { title: "Mukemmellik", description: "Her detayda en yuksek kaliteyi hedefliyor, surekli kendimizi gelistiriyoruz." },
+  { title: "Misafirperverlik", description: "Her misafirimizi ailemizin bir parçası olarak görüyor, sıcak ve samimi bir karşılama sunuyoruz." },
+  { title: "Sürdürülebilirlik", description: "Doğaya saygı ilkemizle, organik malzemeler ve yenilenebilir enerji kullanıyoruz." },
+  { title: "Özgünlük", description: "Alaçatı'nın tarihi ve kültürel dokusunu koruyarak, otantik bir deneyim yaratıyoruz." },
+  { title: "Mükemmellik", description: "Her detayda en yüksek kaliteyi hedefliyor, sürekli kendimizi geliştiriyoruz." },
 ];
 
 export default function AboutPage() {
   const breadcrumbJsonLd = generateBreadcrumbJsonLd([
     { name: "Ana Sayfa", url: "https://palmaalacati.com" },
-    { name: "Hakkimizda", url: "https://palmaalacati.com/hakkimizda" },
+    { name: "Hakkımızda", url: "https://palmaalacati.com/hakkimizda" },
   ]);
 
   return (
@@ -57,7 +57,7 @@ export default function AboutPage() {
         <div className="absolute inset-0">
           <img
             src="/images/hotel/9ac599d1.jpg"
-            alt="Palma Alacati hakkinda"
+            alt="Palma Alaçatı hakkinda"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-charcoal/50" />
@@ -79,7 +79,7 @@ export default function AboutPage() {
                 <div className="aspect-[4/5] rounded-2xl overflow-hidden">
                   <img
                     src="/images/hotel/81d0ecd4.jpg"
-                    alt="Palma Alacati hikayesi"
+                    alt="Palma Alaçatı hikayesi"
                     className="w-full h-full object-cover"
                     loading="lazy"
                   />
@@ -97,19 +97,19 @@ export default function AboutPage() {
               <SectionLabel text="Hikayemiz" />
               <h2 className="font-heading text-4xl md:text-5xl text-charcoal mt-4 leading-[1.15]">
                 Ege Ruhunu
-                <span className="text-sage italic"> Yasatiyoruz</span>
+                <span className="text-sage italic"> Yaşatıyoruz</span>
               </h2>
               <p className="mt-6 text-warm-gray leading-relaxed text-lg">
-                Palma Alacati, 2022 yilinda Alacati&apos;nin Hacimemis
-                Mahallesi&apos;nde butik apart otel olarak hayata gecti.
-                Amacimiz, Ege&apos;nin essiz yasam kulturunu, modern
-                konfor ve kisisellestirilmis hizmet anlayisiyla bulusturmakti.
+                Palma Alaçatı, 2022 yılında Alaçatı&apos;nın Hacımemiş
+                Mahallesi&apos;nde butik apart otel olarak hayata geçti.
+                Amacımız, Ege&apos;nin eşsiz yaşam kültürünü, modern
+                konfor ve kişiselleştirilmiş hizmet anlayışıyla buluşturmaktı.
               </p>
               <p className="mt-4 text-warm-gray leading-relaxed">
-                Bugun 5 ozel tasarimli dairemiz, yesilliklerle cevrili
-                bahcemiz ve mevsimlik acik havuzumuz ile misafirlerimize
-                unutulmaz anlar yasatmaya devam ediyoruz. Her dairemiz kendine
-                ozgu ic tasarimi ve ozel mutfagi ile fark yaratiyor.
+                Bugün 7 özel tasarımlı dairemiz, yeşilliklerle çevrili
+                bahçemiz ve mevsimlik açık havuzumuz ile misafirlerimize
+                unutulmaz anlar yaşatmaya devam ediyoruz. Her dairemiz kendine
+                özgü iç tasarımı ve özel mutfağı ile fark yaratıyor.
               </p>
               <div className="mt-8 grid grid-cols-3 gap-6">
                 <div className="text-center">
